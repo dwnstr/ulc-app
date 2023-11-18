@@ -1,6 +1,8 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { ConfigsContext } from "@/context/configs.context";
+import { Plus, X } from 'lucide-react';
+import Label from "./Label"
 
 const StringInput = (props) => {
   const { valueIndex, value, values, setNewValues, removeValue } = props;
@@ -13,9 +15,9 @@ const StringInput = (props) => {
   };
 
   return (
-    <div className='flex gap-2 items-center'>
+    <div className='flex gap-2 items-center w-full'>
       <form
-        className=''
+        className='w-full'
         onChange={(e) => {
           e.preventDefault();
 
@@ -34,27 +36,28 @@ const StringInput = (props) => {
         <input
           type='text'
           placeholder='Model Name'
-          className={`bg-zinc-700 rounded-md`}
+          className={`bg-zinc-900/40 rounded-md px-2 py-1 w-full border border-zinc-600 text-zinc-300 placeholder:text-zinc-500`}
           onChange={(e) => {
             e.preventDefault();
           }}
+          value={value}
         />
         {error ? <p>{error}</p> : null}
       </form>
       <button
-        className='h-8 aspect-square bg-zinc-700 rounded-md'
+        className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
         onClick={() => {
           removeValue(valueIndex);
         }}
       >
-        X
+        <X size={16}/>
       </button>
     </div>
   );
 };
 
 const StringArrayInput = (props) => {
-  const { configId, field, label, values } = props;
+  const { configId, field, label, tooltipText, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newValues, setNewValues] = useState(values);
@@ -70,7 +73,6 @@ const StringArrayInput = (props) => {
   };
 
   const removeValue = (index) => {
-    console.log("removeValue", index);
     const newValues = [...values];
     newValues.splice(index, 1);
     setNewValues(newValues);
@@ -90,16 +92,19 @@ const StringArrayInput = (props) => {
   });
 
   return (
-    <div>
-      <label>{label}</label>
-      <button
-        className='h-8 aspect-square bg-zinc-700 rounded-md'
-        onClick={() => {
-          addValue();
-        }}
-      >
-        +
-      </button>
+    <div className="w-full">
+      <div className="flex justify-between w-full items-center">
+        <Label text={label} tooltipText={tooltipText}/>
+        <button
+          className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+          onClick={() => {
+            addValue();
+          }}
+        >
+          <Plus size={18}/>
+        </button>
+      </div>
+      
       <div className='flex flex-col gap-2 mt-2'>{inputs}</div>
     </div>
   );
