@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ConfigsContext } from "@/context/configs.context";
+import { ConfigsContext } from "@/context/configs.context"
+import Label from './Label'
 
 const NumberSelectGroup = (props) => {
-  const { configId, field, label, values } = props;
+  const { configId, field, label, tooltipText, values } = props;
   // console.log(configId);
   const { updateConfigValue } = useContext(ConfigsContext);
   //console.log(values);
@@ -16,7 +17,7 @@ const NumberSelectGroup = (props) => {
       return (
         <button
           key={i}
-          className='h-full w-full py-1 rounded-sm hover:brightness-125 transition bg-blue-500'
+          className='h-full w-full rounded hover:brightness-125 transition bg-emerald-500 border-t border-emerald-300'
           onClick={() => {
             updateConfigValue(
               configId,
@@ -33,7 +34,7 @@ const NumberSelectGroup = (props) => {
     return (
       <button
         key={i}
-        className='h-full w-full py-1 rounded-sm hover:brightness-125 transition bg-zinc-700'
+        className='h-full w-full rounded hover:brightness-125 transition bg-zinc-700 border-t border-zinc-600'
         onClick={() => {
           updateConfigValue(configId, field, values.concat(i));
         }}
@@ -45,7 +46,7 @@ const NumberSelectGroup = (props) => {
 
   return (
     <div className=''>
-      <label>{label}</label>
+      <Label text={label} tooltipText={tooltipText} />
       <div className='grid grid-cols-4 md:grid-cols-6 xl:grid-cols-12 gap-1 flex-wrap'>
         {buttons}
       </div>
