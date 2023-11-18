@@ -42,6 +42,7 @@ const NumberInput = (props) => {
           <Slider.Thumb
             className='block w-5 h-5 bg-white rounded-[10px] hover:bg-violet3 focus:outline-none'
             aria-label='Volume'
+            value={value}
           />
         </Slider.Root>
       </div>
