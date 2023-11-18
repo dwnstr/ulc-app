@@ -4,7 +4,7 @@ import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
 
 const NumberInput = (props) => {
-  const { configIndex, label, tooltipText, field, value } = props;
+  const { configId, label, tooltipText, field, value } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
   const [displayValue, setDisplayValue] = useState(value);
 
@@ -17,7 +17,7 @@ const NumberInput = (props) => {
   };
 
   const handleCommit = (newValue) => {
-    updateConfigValue(configIndex, field, newValue);
+    updateConfigValue(configId, field, newValue);
   };
 
   return (

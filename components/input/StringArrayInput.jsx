@@ -4,7 +4,8 @@ import { Plus, X } from "lucide-react";
 import Label from "./Label";
 
 const StringInput = (props) => {
-  const { valueIndex, value, values, setNewValues, removeValue } = props;
+  const { configId, valueIndex, value, values, setNewValues, removeValue } =
+    props;
   const [error, setError] = useState(null);
 
   const updateValue = (newValue) => {
@@ -15,8 +16,12 @@ const StringInput = (props) => {
 
   return (
     <div className='flex gap-2 items-center w-full'>
-      <form
-        className='w-full'
+      <input
+        key={`${valueIndex}${configId}`}
+        type='text'
+        placeholder='Model Name'
+        className={`bg-zinc-900/40 rounded-md px-2 py-1 w-full border border-zinc-600 text-zinc-300 placeholder:text-zinc-500`}
+        value={value}
         onChange={(e) => {
           e.preventDefault();
 
@@ -31,18 +36,8 @@ const StringInput = (props) => {
           setError(null);
           updateValue(e.target.value);
         }}
-      >
-        <input
-          type='text'
-          placeholder='Model Name'
-          className={`bg-zinc-900/40 rounded-md px-2 py-1 w-full border border-zinc-600 text-zinc-300 placeholder:text-zinc-500`}
-          onChange={(e) => {
-            e.preventDefault();
-          }}
-          value={value}
-        />
-        {error ? <p>{error}</p> : null}
-      </form>
+      />
+      {error ? <p>{error}</p> : null}
       <button
         className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
         onClick={() => {
@@ -56,13 +51,13 @@ const StringInput = (props) => {
 };
 
 const StringArrayInput = (props) => {
-  const { configIndex, field, label, tooltipText, values } = props;
+  const { configId, field, label, tooltipText, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newValues, setNewValues] = useState(values);
 
   useEffect(() => {
-    updateConfigValue(configIndex, field, newValues);
+    updateConfigValue(configId, field, newValues);
   }, [newValues]);
 
   const addValue = () => {
@@ -81,6 +76,7 @@ const StringArrayInput = (props) => {
     return (
       <StringInput
         key={index}
+        configId={configId}
         valueIndex={index}
         value={value}
         values={newValues}
@@ -104,7 +100,9 @@ const StringArrayInput = (props) => {
         </button>
       </div>
 
-      <div className='flex flex-col gap-2 mt-2'>{inputs}</div>
+      <div key={configId} className='flex flex-col gap-2 mt-2'>
+        {inputs}
+      </div>
     </div>
   );
 };

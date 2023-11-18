@@ -3,16 +3,9 @@ import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
 
 const NumberSelectGroup = (props) => {
-  const {
-    controlled,
-    configIndex,
-    field,
-    label,
-    tooltipText,
-    values,
-    setValues,
-  } = props;
-  // console.log(configIndex);
+  const { controlled, configId, field, label, tooltipText, values, setValues } =
+    props;
+  // console.log(configId);
   const { updateConfigValue } = useContext(ConfigsContext);
   //console.log(values);
 
@@ -29,7 +22,7 @@ const NumberSelectGroup = (props) => {
               setValues(values.filter((e) => e !== i));
             } else {
               updateConfigValue(
-                configIndex,
+                configId,
                 field,
                 values.filter((e) => e !== i)
               );
@@ -49,7 +42,7 @@ const NumberSelectGroup = (props) => {
           if (controlled) {
             setValues(values.concat(i));
           } else {
-            updateConfigValue(configIndex, field, values.concat(i));
+            updateConfigValue(configId, field, values.concat(i));
           }
         }}
       >

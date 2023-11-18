@@ -4,22 +4,15 @@ import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
 
 const ToggleSwitch = (props) => {
-  const {
-    controlled,
-    configIndex,
-    label,
-    tooltipText,
-    field,
-    value,
-    setValue,
-  } = props;
+  const { controlled, configId, label, tooltipText, field, value, setValue } =
+    props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const handleChange = (e) => {
     if (controlled) {
       setValue(e);
     } else {
-      updateConfigValue(configIndex, field, e);
+      updateConfigValue(configId, field, e);
     }
   };
 

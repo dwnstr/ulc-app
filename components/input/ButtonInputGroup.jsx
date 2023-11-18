@@ -5,13 +5,13 @@ import ButtonInput from "./ButtonInput";
 import Label from "./Label";
 
 const ButtonInputGroup = (props) => {
-  const { configIndex, label, tooltipText, field, values } = props;
+  const { configId, label, tooltipText, field, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newButtons, setNewButtons] = useState(values);
 
   useEffect(() => {
-    updateConfigValue(configIndex, field, newButtons);
+    updateConfigValue(configId, field, newButtons);
   }, [newButtons]);
 
   const addNewButton = () => {

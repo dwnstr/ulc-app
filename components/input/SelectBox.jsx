@@ -7,7 +7,7 @@ import Label from "./Label";
 const SelectBox = (props) => {
   const {
     controlled,
-    configIndex,
+    configId,
     field,
     label,
     tooltipText,
@@ -22,7 +22,7 @@ const SelectBox = (props) => {
     if (controlled) {
       setValue(newValue);
     } else {
-      updateConfigValue(configIndex, field, newValue);
+      updateConfigValue(configId, field, newValue);
     }
   };
 

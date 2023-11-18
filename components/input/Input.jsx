@@ -33,7 +33,7 @@ const ConfigInputGroup = (props) => {
       {/* names */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <StringArrayInput
-          configIndex={config.id}
+          configId={config.id}
           field={"names"}
           label={"Names"}
           tooltipText={
@@ -52,14 +52,14 @@ const ConfigInputGroup = (props) => {
       {/* buttons */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           field={"useButtons"}
           label={"Use Buttons"}
           value={config.useButtons}
         />
         <CollapsibleSection open={config.useButtons}>
           <ButtonInputGroup
-            configIndex={config.id}
+            configId={config.id}
             label='Buttons'
             tooltipText=''
             field={"buttons"}
@@ -71,21 +71,21 @@ const ConfigInputGroup = (props) => {
       {/* cruise lights */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Cruise"}
           field={"useCruise"}
           value={config.useCruise}
         />
         <CollapsibleSection open={config.useCruise}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"cruiseExtras"}
             label={"Cruise Extras"}
             tooltipText='Select each extra that will be used as cruise lights!'
             values={config.cruiseExtras}
           />
           <SelectBox
-            configIndex={config.id}
+            configId={config.id}
             field={"cruiseForced"}
             label='Cruise Forced'
             options={[
@@ -96,7 +96,7 @@ const ConfigInputGroup = (props) => {
             value={config.cruiseForced}
           />
           <ToggleSwitch
-            configIndex={config.id}
+            configId={config.id}
             label={"Disable with lights"}
             tooltipText='If enabled, the cruise lights will turn off when emergency lights are activated.'
             field={"cruiseDWL"}
@@ -108,32 +108,32 @@ const ConfigInputGroup = (props) => {
       {/* park extras */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Park"}
           field={"usePark"}
           value={config.usePark}
         />
         <CollapsibleSection open={config.usePark}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"parkExtras"}
             label={"Park Extras"}
             values={config.parkExtras}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"driveExtras"}
             label={"Drive Extras"}
             values={config.driveExtras}
           />
           <ToggleSwitch
-            configIndex={config.id}
+            configId={config.id}
             label={"Use Sync"}
             field={"useSync"}
             value={config.useSync}
           />
           <StringArrayInput
-            configIndex={config.id}
+            configId={config.id}
             field={"syncWith"}
             label={"Sync with"}
             values={config.syncWith}
@@ -144,14 +144,14 @@ const ConfigInputGroup = (props) => {
       {/* horn extras */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Horn"}
           field={"useHorn"}
           value={config.useHorn}
         />
         <CollapsibleSection open={config.useHorn}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"hornExtras"}
             label={"Horn Extras"}
             values={config.hornExtras}
@@ -162,21 +162,21 @@ const ConfigInputGroup = (props) => {
       {/* brake extras */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Brakes"}
           field={"useBrakes"}
           value={config.useBrakes}
         />
         <CollapsibleSection open={config.useBrakes}>
           <NumberInput
-            configIndex={config.id}
+            configId={config.id}
             label={"Speed Threshold"}
             tooltipText='If you start braking below this speed the brake light extras will not activate. If the value is 3, this will enable realistic mode (the brake lights will stay on while stationary). '
             field={"brakeSpeedThreshold"}
             value={config.brakeSpeedThreshold}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"brakeExtras"}
             label={"Brake Extras"}
             values={config.brakeExtras}
@@ -187,14 +187,14 @@ const ConfigInputGroup = (props) => {
       {/* reverse extras */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Reverse"}
           field={"useReverse"}
           value={config.useReverse}
         />
         <CollapsibleSection open={config.useReverse}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"reverseExtras"}
             label={"Reverse Extras"}
             values={config.reverseExtras}
@@ -205,44 +205,44 @@ const ConfigInputGroup = (props) => {
       {/* door extras */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Doors"}
           field={"useDoors"}
           value={config.useDoors}
         />
         <CollapsibleSection open={config.useDoors}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"dEnable"}
             label={"Driver Enable"}
             values={config.dEnable}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"dDisable"}
             label={"Driver Disable"}
             values={config.dDisable}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"pEnable"}
             label={"Passenger Enable"}
             values={config.pEnable}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"pDisable"}
             label={"Passenger Disable"}
             values={config.pDisable}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"tEnable"}
             label={"Trunk Enable"}
             values={config.tEnable}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"tDisable"}
             label={"Trunk Disable"}
             values={config.tDisable}
@@ -253,20 +253,20 @@ const ConfigInputGroup = (props) => {
       {/* default stages */}
       <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configIndex={config.id}
+          configId={config.id}
           label={"Use Default Stages"}
           field={"useDefaultStages"}
           value={config.useDefaultStages}
         />
         <CollapsibleSection open={config.useDefaultStages}>
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"enableKeys"}
             label={"Enable Keys"}
             values={config.enableKeys}
           />
           <NumberSelectGroup
-            configIndex={config.id}
+            configId={config.id}
             field={"disableKeys"}
             label={"Disable Keys"}
             values={config.disableKeys}

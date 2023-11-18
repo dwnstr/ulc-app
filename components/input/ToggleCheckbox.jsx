@@ -4,18 +4,18 @@ import { Check } from "lucide-react";
 import { ConfigsContext } from "@/context/configs.context";
 
 const ToggleCheckbox = (props) => {
-  const { configIndex, label, field, value } = props;
+  const { configId, label, field, value } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const handleChange = (newValue) => {
     console.log(newValue);
-    updateConfigValue(configIndex, field, newValue);
+    updateConfigValue(configId, field, newValue);
   };
 
   return (
     <div className='flex gap-4 items-center'>
       <Checkbox.Root
-        key={configIndex}
+        key={`${configId}${field}`}
         onCheckedChange={handleChange}
         className='hover:brightness-125 flex h-5 w-5 items-center justify-center rounded-[4px] bg-zinc-700 aria-checked:bg-emerald-600 outline-none focus:outline-emerald-500'
       >
