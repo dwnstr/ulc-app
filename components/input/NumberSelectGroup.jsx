@@ -1,12 +1,18 @@
-"use client";
-
 import React, { useContext } from "react";
-import { ConfigsContext } from "@/context/configs.context"
-import Label from './Label'
+import { ConfigsContext } from "@/context/configs.context";
+import Label from "./Label";
 
 const NumberSelectGroup = (props) => {
-  const { configId, field, label, tooltipText, values } = props;
-  // console.log(configId);
+  const {
+    controlled,
+    configIndex,
+    field,
+    label,
+    tooltipText,
+    values,
+    setValues,
+  } = props;
+  // console.log(configIndex);
   const { updateConfigValue } = useContext(ConfigsContext);
   //console.log(values);
 
@@ -19,11 +25,15 @@ const NumberSelectGroup = (props) => {
           key={i}
           className='h-full w-full rounded hover:brightness-125 transition bg-emerald-500 border-t border-emerald-300'
           onClick={() => {
-            updateConfigValue(
-              configId,
-              field,
-              values.filter((e) => e !== i)
-            );
+            if (controlled) {
+              setValues(values.filter((e) => e !== i));
+            } else {
+              updateConfigValue(
+                configIndex,
+                field,
+                values.filter((e) => e !== i)
+              );
+            }
           }}
         >
           {i}
@@ -36,7 +46,11 @@ const NumberSelectGroup = (props) => {
         key={i}
         className='h-full w-full rounded hover:brightness-125 transition bg-zinc-700 border-t border-zinc-600'
         onClick={() => {
-          updateConfigValue(configId, field, values.concat(i));
+          if (controlled) {
+            setValues(values.concat(i));
+          } else {
+            updateConfigValue(configIndex, field, values.concat(i));
+          }
         }}
       >
         {i}

@@ -1,54 +1,104 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ConfigsContext } from "@/context/configs.context";
+import { Plus, Trash2 } from "lucide-react";
 import CollapsibleSection from "./CollapsibleSection";
 import NumberSelectGroup from "./NumberSelectGroup";
 import StringArrayInput from "./StringArrayInput";
 import ToggleSwitch from "./ToggleSwitch";
 import ToggleCheckbox from "./ToggleCheckbox";
 import NumberInput from "./NumberInput";
-import SelectBox from "./SelectBox"
+import SelectBox from "./SelectBox";
+import ButtonInputGroup from "./ButtonInputGroup";
 
 const ConfigInputGroup = (props) => {
-  const { configId, config } = props;
+  const { config } = props;
+  const { removeConfig } = useContext(ConfigsContext);
 
   return (
-    <div className="flex flex-col gap-2 w-full p-2 rounded-md bg-zinc-800 rounded-md">
-
-      
+    <div className='flex flex-col gap-2 w-full p-2 bg-zinc-800 rounded-md'>
+      <div className='flex justify-between w-full'>
+        Config ID: {config.id}
+        {/* remove button */}
+        <button
+          className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-zinc-700 hover:bg-red-500 rounded hover:brightness-125 transition border-t border-zinc-600'
+          onClick={() => {
+            removeConfig(config.id);
+          }}
+        >
+          <p className='text-s pointer-events-none'>Delete Config</p>
+          <Trash2 size={18} />
+        </button>
+      </div>
 
       {/* names */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <StringArrayInput
-          configId={configId}
+          configIndex={config.id}
           field={"names"}
           label={"Names"}
-          tooltipText={"Enter the model names for each vehicle that will be affected by this configuration."}
+          tooltipText={
+            "Enter the model names for each vehicle that will be affected by this configuration."
+          }
           values={config.names}
         />
-        {config.names.length < 1 ? (<div className="flex items-center justify-center text-red-400">At least one model name is required!</div>):(<></>)}
+        {config.names.length < 1 ? (
+          <div className='flex items-center justify-center text-red-400'>
+            At least one model name is required!
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
       {/* buttons */}
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+        <ToggleCheckbox
+          configIndex={config.id}
+          field={"useButtons"}
+          label={"Use Buttons"}
+          value={config.useButtons}
+        />
+        <CollapsibleSection open={config.useButtons}>
+          <ButtonInputGroup
+            configIndex={config.id}
+            label='Buttons'
+            tooltipText=''
+            field={"buttons"}
+            values={config.buttons}
+          />
+        </CollapsibleSection>
+      </div>
 
       {/* cruise lights */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Cruise"}
           field={"useCruise"}
           value={config.useCruise}
         />
         <CollapsibleSection open={config.useCruise}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"cruiseExtras"}
             label={"Cruise Extras"}
-            tooltipText="Select each extra that will be used as cruise lights!"
+            tooltipText='Select each extra that will be used as cruise lights!'
             values={config.cruiseExtras}
           />
-          <SelectBox configId={configId} field={"cruiseForced"} label="Cruise Forced" value={config.cruiseForced}/>
+          <SelectBox
+            configIndex={config.id}
+            field={"cruiseForced"}
+            label='Cruise Forced'
+            options={[
+              { name: "Never", value: "forceOn = false, useTime = false" },
+              { name: "Always", value: "forceOn = true, useTime = false" },
+              { name: "At night", value: "forceOn = false, useTime = true" },
+            ]}
+            value={config.cruiseForced}
+          />
           <ToggleSwitch
-            configId={configId}
-            label={"Disable when lights are on"}
+            configIndex={config.id}
+            label={"Disable with lights"}
+            tooltipText='If enabled, the cruise lights will turn off when emergency lights are activated.'
             field={"cruiseDWL"}
             value={config.cruiseDWL}
           />
@@ -56,34 +106,34 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* park extras */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Park"}
           field={"usePark"}
           value={config.usePark}
         />
         <CollapsibleSection open={config.usePark}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"parkExtras"}
             label={"Park Extras"}
             values={config.parkExtras}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"driveExtras"}
             label={"Drive Extras"}
             values={config.driveExtras}
           />
           <ToggleSwitch
-            configId={configId}
+            configIndex={config.id}
             label={"Use Sync"}
             field={"useSync"}
             value={config.useSync}
           />
           <StringArrayInput
-            configId={configId}
+            configIndex={config.id}
             field={"syncWith"}
             label={"Sync with"}
             values={config.syncWith}
@@ -92,16 +142,16 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* horn extras */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Horn"}
           field={"useHorn"}
           value={config.useHorn}
         />
         <CollapsibleSection open={config.useHorn}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"hornExtras"}
             label={"Horn Extras"}
             values={config.hornExtras}
@@ -110,22 +160,23 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* brake extras */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Brakes"}
           field={"useBrakes"}
           value={config.useBrakes}
         />
         <CollapsibleSection open={config.useBrakes}>
           <NumberInput
-            configId={configId}
-            label={"Threshold"}
+            configIndex={config.id}
+            label={"Speed Threshold"}
+            tooltipText='If you start braking below this speed the brake light extras will not activate. If the value is 3, this will enable realistic mode (the brake lights will stay on while stationary). '
             field={"brakeSpeedThreshold"}
             value={config.brakeSpeedThreshold}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"brakeExtras"}
             label={"Brake Extras"}
             values={config.brakeExtras}
@@ -134,16 +185,16 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* reverse extras */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Reverse"}
           field={"useReverse"}
           value={config.useReverse}
         />
         <CollapsibleSection open={config.useReverse}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"reverseExtras"}
             label={"Reverse Extras"}
             values={config.reverseExtras}
@@ -152,46 +203,46 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* door extras */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Doors"}
           field={"useDoors"}
           value={config.useDoors}
         />
         <CollapsibleSection open={config.useDoors}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"dEnable"}
             label={"Driver Enable"}
             values={config.dEnable}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"dDisable"}
             label={"Driver Disable"}
             values={config.dDisable}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"pEnable"}
             label={"Passenger Enable"}
             values={config.pEnable}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"pDisable"}
             label={"Passenger Disable"}
             values={config.pDisable}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"tEnable"}
             label={"Trunk Enable"}
             values={config.tEnable}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"tDisable"}
             label={"Trunk Disable"}
             values={config.tDisable}
@@ -200,22 +251,22 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* default stages */}
-      <div className="bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2">
+      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
-          configId={configId}
+          configIndex={config.id}
           label={"Use Default Stages"}
           field={"useDefaultStages"}
           value={config.useDefaultStages}
         />
         <CollapsibleSection open={config.useDefaultStages}>
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"enableKeys"}
             label={"Enable Keys"}
             values={config.enableKeys}
           />
           <NumberSelectGroup
-            configId={configId}
+            configIndex={config.id}
             field={"disableKeys"}
             label={"Disable Keys"}
             values={config.disableKeys}
@@ -227,17 +278,26 @@ const ConfigInputGroup = (props) => {
 };
 
 const Input = () => {
-  const { configs } = useContext(ConfigsContext);
+  const { configs, addConfig } = useContext(ConfigsContext);
   //console.log("Configs", configs);
   // map configs to input groups
   const inputGroups = configs.map((config, index) => {
     //console.log(key, config);
-    return <ConfigInputGroup key={index} configId={index} config={config} />;
+    return <ConfigInputGroup key={index} config={config} />;
   });
 
   return (
-    <section className="flex flex-col gap-2  h-full w-full ">
+    <section className='flex flex-col gap-4 h-full w-full '>
       {inputGroups}
+      <button
+        className='flex items-center justify-center gap-2 h-10 pb-1 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+        onClick={() => {
+          addConfig();
+        }}
+      >
+        <p className='text-s pointer-events-none'>New config</p>
+        <Plus size={18} />
+      </button>
     </section>
   );
 };

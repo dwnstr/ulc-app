@@ -1,8 +1,7 @@
-"use client";
 import React, { useContext, useEffect, useState } from "react";
 import { ConfigsContext } from "@/context/configs.context";
-import { Plus, X } from 'lucide-react';
-import Label from "./Label"
+import { Plus, X } from "lucide-react";
+import Label from "./Label";
 
 const StringInput = (props) => {
   const { valueIndex, value, values, setNewValues, removeValue } = props;
@@ -50,20 +49,20 @@ const StringInput = (props) => {
           removeValue(valueIndex);
         }}
       >
-        <X size={16}/>
+        <X size={16} />
       </button>
     </div>
   );
 };
 
 const StringArrayInput = (props) => {
-  const { configId, field, label, tooltipText, values } = props;
+  const { configIndex, field, label, tooltipText, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newValues, setNewValues] = useState(values);
 
   useEffect(() => {
-    updateConfigValue(configId, field, newValues);
+    updateConfigValue(configIndex, field, newValues);
   }, [newValues]);
 
   const addValue = () => {
@@ -92,19 +91,19 @@ const StringArrayInput = (props) => {
   });
 
   return (
-    <div className="w-full">
-      <div className="flex justify-between w-full items-center">
-        <Label text={label} tooltipText={tooltipText}/>
+    <div className='w-full'>
+      <div className='flex justify-between w-full items-center'>
+        <Label text={label} tooltipText={tooltipText} />
         <button
           className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
           onClick={() => {
             addValue();
           }}
         >
-          <Plus size={18}/>
+          <Plus size={18} />
         </button>
       </div>
-      
+
       <div className='flex flex-col gap-2 mt-2'>{inputs}</div>
     </div>
   );

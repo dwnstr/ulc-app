@@ -7,61 +7,68 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 const CodeWindow = () => {
   const { configs } = useContext(ConfigsContext);
 
-  // const code = `--[[
-  //     Ultimate Lighting Controller data
-  //     the ULC resource is required to use this datauration
-  //     get the resource here: https://github.com/Flohhhhh/ultimate-lighting-controller/releases/latest
+  const configsString = configs
+    .map((config) => {
+      return `
+  { names = {${config.names}},
+    steadyBurnConfig = {
+      ${config.cruiseForced}
+      disableWithLights = ${config.cruiseDWL},
+      sbExtras = {${config.cruiseExtras}}
+    },
+    parkConfig = {
+      usePark = ${config.usePark},
+      useSync = ${config.useSync},
+      syncWith = {${config.syncWith}},
+      pExtras = {${config.parkExtras}},
+      dExtras = {${config.driveExtras}}
+    },
+    hornConfig = {
+      useHorn = ${config.useHorn},
+      hornExtras = {${config.hornExtras}},
+    },
+    brakeConfig = {
+      useBrakes = ${config.useBrakes},
+      speedThreshold = ${config.brakeSpeedThreshold},
+      brakeExtras = {${config.brakeExtras}}
+    },
+    reverseConfig = {
+      useReverse = ${config.useReverse},
+      reverseExtras = {${config.reverseExtras}}
+    },
+    doorConfig = {
+      useDoors = ${config.useDoors},
+      driverSide = {enable = {${config.dEnable}}, disable = {${config.dDisable}}},
+      passSide = {enable = {${config.pEnable}}, disable = {${config.pDisable}}},
+      trunk = {enable ={${config.tEnable}}, disable = {${config.tDisable}}}
+    }, 
+    buttons = {
+      ${config.buttons}
+    },
+    defaultStages = {
+      useDefaults = ${config.useDefaultStages},
+      enableKeys = {${config.enableKeys}},
+      disableKeys = {${config.disableKeys}}
+    }
+  }`;
+    })
+    .join(",\n");
 
-  //     To learn how to setup and use ULC visit here: https://docs.dwnstr.com/ulc/overview
-  // ]]
-
-  // return { names = {${data.names}},
-  //     steadyBurndata = {
-  //         ${data.cruiseForced}
-  //         disableWithLights = ${data.cruiseDWL},
-  //         sbExtras = {${data.cruiseExtras}}
-  //     },
-  //     parkdata = {
-  //         usePark = ${data.usePark},
-  //         useSync = ${data.useSync},
-  //         syncWith = {${data.syncWith}},
-  //         pExtras = {${data.parkExtras}},
-  //         dExtras = {${data.driveExtras}}
-  //     },
-  //     horndata = {
-  //         useHorn = ${data.useHorn},
-  //         hornExtras = {${data.hornExtras}},
-  //     },
-  //     brakedata = {
-  //         useBrakes = ${data.useBrakes},
-  //         speedThreshold = ${data.brakeSpeedThreshold},
-  //         brakeExtras = {${data.brakeExtras}}
-  //     },
-  //     reversedata = {
-  //         useReverse = ${data.useReverse},
-  //         reverseExtras = {${data.reverseExtras}}
-  //     },
-  //     doordata = {
-  //         useDoors = ${data.useDoors},
-  //         driverSide = {enable = {${data.dEnable}}, disable = {${data.dDisable}}},
-  //         passSide = {enable = {${data.pEnable}}, disable = {${data.pDisable}}},
-  //         trunk = {enable ={${data.tEnable}}, disable = {${data.tDisable}}}
-  //     },
-  //     buttons = {
-  //         ${data.buttons}
-  //     },
-  //     defaultStages = {
-  //         useDefaults = ${data.useDefaultStages},
-  //         enableKeys = {${data.enableKeys}},
-  //         disableKeys = {${data.disableKeys}}
-  //     }
-  // }`;
+  const code = `--[[ 
+    Ultimate Lighting Controller Config
+    the ULC resource is required to use this configuration
+    get the resource here: https://github.com/Flohhhhh/ultimate-lighting-controller/releases/latest
+        
+    To learn how to setup and use ULC visit here: https://docs.dwnstr.com/ulc/overview
+  ]]
+                
+  return ${configsString.substring(1, configsString.length - 1)}`;
 
   return (
     <section className='-mt-3 p-1'>
       {/* https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme */}
       <SyntaxHighlighter
-        className='w-full h-full'
+        className='w-full h-full text-xs'
         language='lua'
         style={oneDark}
         codeTagProps={{
@@ -71,7 +78,7 @@ const CodeWindow = () => {
         lineProps={{ className: "pointer-events-none" }}
         showLineNumbers
       >
-        {JSON.stringify(configs[0], null, 1)}
+        {code}
       </SyntaxHighlighter>
     </section>
   );
