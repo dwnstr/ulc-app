@@ -19,7 +19,7 @@ const ConfigInputGroup = (props) => {
       <div className='flex justify-between w-full'>
         {/* remove button */}
         <button
-          className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-shark-600 hover:bg-red-500 rounded hover:brightness-125 transition border-t border-shark-500'
+          className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-shark-600 hover:bg-red-500 rounded hover:brightness-125 active:scale-95 transition border-t border-shark-500'
           onClick={() => {
             removeConfig(config.id);
           }}
@@ -132,7 +132,7 @@ const ConfigInputGroup = (props) => {
             value={config.useSync}
           />
           <CollapsibleSection open={config.useSync}>
-            <div className="bg-shark-900/40 p-4 rounded">
+            <div className='bg-shark-900/40 p-4 rounded'>
               <StringArrayInput
                 configId={config.id}
                 field={"syncWith"}
@@ -293,7 +293,7 @@ const Input = () => {
     <section className='flex flex-col gap-4 h-full w-full '>
       {inputGroups}
       <button
-        className='flex items-center justify-center gap-2 h-10 pb-1 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-600'
+        className='flex items-center justify-center gap-2 h-10 pb-1 aspect-square bg-shark-600 rounded hover:brightness-125 active:brightness-75 transition border-t border-shark-500'
         onClick={() => {
           addConfig();
         }}

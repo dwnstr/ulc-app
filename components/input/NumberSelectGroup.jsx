@@ -16,7 +16,7 @@ const NumberSelectGroup = (props) => {
       return (
         <button
           key={i}
-          className='h-full w-full rounded hover:brightness-125 transition bg-emerald-500 border-t border-emerald-300'
+          className='h-full w-full rounded hover:brightness-125 active:scale-90 transition bg-emerald-500 border-t border-emerald-300'
           onClick={() => {
             if (controlled) {
               setValues(values.filter((e) => e !== i));
@@ -37,7 +37,7 @@ const NumberSelectGroup = (props) => {
     return (
       <button
         key={i}
-        className='h-full w-full rounded hover:brightness-125 transition bg-shark-600 border-t border-shark-500'
+        className='h-full w-full rounded hover:brightness-125 active:scale-90 transition bg-shark-600 border-t border-shark-500'
         onClick={() => {
           if (controlled) {
             setValues(values.concat(i));

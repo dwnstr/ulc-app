@@ -124,7 +124,7 @@ const ButtonInput = (props) => {
         />
       </div>
       <button
-        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
+        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:bg-red-500 active:scale-90 transition border-t border-shark-500'
         onClick={() => {
           removeButton(index);
         }}
