@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import React from "react";
 import Input from "../../components/input/Input";
 import CodeWindow from "../../components/code/CodeWindow";

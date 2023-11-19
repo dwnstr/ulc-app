@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ConfigsContext } from "@/context/configs.context";
 import { Plus, Trash2 } from "lucide-react";
 import CollapsibleSection from "./CollapsibleSection";
