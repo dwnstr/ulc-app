@@ -117,6 +117,9 @@ const ConfigInputGroup = (props) => {
             configId={config.id}
             field={"parkExtras"}
             label={"Park Extras"}
+            tooltipText={
+              "These extras will be enabled when the vehicle is parked, and disabled when it is driving."
+            }
             values={config.parkExtras}
           />
           <NumberSelectGroup
