@@ -8,7 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        shark: {
+          50: "#EEEFF2",
+          100: "#DCDFE4",
+          200: "#BDC2CC",
+          300: "#9AA2B1",
+          400: "#788297",
+          500: "#5B6476",
+          600: "#434956",
+          700: "#282C34",
+          800: "#1F2228",
+          900: "#181B20",
+          950: "#14161A",
+        },
+      },
       
       keyframes: {
         slideUpAndFade: {

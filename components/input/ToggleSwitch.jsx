@@ -20,8 +20,9 @@ const ToggleSwitch = (props) => {
     <div className='flex flex-col gap-2'>
       <Label text={label} tooltipText={tooltipText} />
       <Switch.Root
+        key={`${configId}${field}`}
         className='w-10 h-5 bg-zinc-700 rounded-full relative data-[state=checked]:bg-emerald-500 outline-none cursor-default'
-        value={value}
+        checked={value}
         onCheckedChange={handleChange}
       >
         <Switch.Thumb className='block w-[12px] h-[12px] bg-white rounded-full transition-transform duration-100 translate-x-1 will-change-transform data-[state=checked]:translate-x-6' />

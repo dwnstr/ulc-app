@@ -10,7 +10,9 @@ const CodeWindow = () => {
   const configsString = configs
     .map((config) => {
       return `
-  { names = {${config.names}},
+  { names = {${config.names.map((name) => {
+    return `"${name}"`
+  })}},
     steadyBurnConfig = {
       ${config.cruiseForced}
       disableWithLights = ${config.cruiseDWL},
@@ -19,7 +21,9 @@ const CodeWindow = () => {
     parkConfig = {
       usePark = ${config.usePark},
       useSync = ${config.useSync},
-      syncWith = {${config.syncWith}},
+      syncWith = {${config.syncWith.map((name) => {
+        return `"${name}"`
+      })}},
       pExtras = {${config.parkExtras}},
       dExtras = {${config.driveExtras}}
     },
@@ -43,7 +47,9 @@ const CodeWindow = () => {
       trunk = {enable ={${config.tEnable}}, disable = {${config.tDisable}}}
     }, 
     buttons = {
-      ${config.buttons}
+      ${config.buttons.map((button) => {
+        return `{label = "${button.label}", key = ${button.key}, color = "${button.color}", extra = ${button.extra}, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${button.repair}}`
+      })}
     },
     defaultStages = {
       useDefaults = ${config.useDefaultStages},
@@ -74,9 +80,6 @@ const CodeWindow = () => {
         codeTagProps={{
           className: "text-s",
         }}
-        wrapLines
-        lineProps={{ className: "pointer-events-none" }}
-        showLineNumbers
       >
         {code}
       </SyntaxHighlighter>

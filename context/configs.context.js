@@ -5,7 +5,7 @@ import { createContext, useState } from "react";
 const ConfigsContext = createContext();
 
 const ConfigsProvider = ({ children }) => {
-  const [nextId, setNextId] = useState(1); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+  const [nextId, setNextId] = useState(1);
   const [configs, setConfigs] = useState([
     {
       id: 0,
@@ -58,58 +58,7 @@ const ConfigsProvider = ({ children }) => {
       useDefaultStages: false,
       enableKeys: [],
       disableKeys: [],
-    },
-    {
-      names: [""],
-
-      useCruise: false,
-      cruiseForced: `forceOn = false, useTime = false,`,
-      cruiseDWL: false,
-      cruiseExtras: [],
-
-      usePark: false,
-      parkExtras: [],
-      driveExtras: [],
-      useSync: false,
-      syncWith: [],
-
-      useHorn: false,
-      hornExtras: [],
-
-      useBrakes: false,
-      useRealBrakes: true,
-      brakeSpeedThreshold: 4,
-      brakeExtras: [],
-
-      useReverse: false,
-      reverseExtras: [],
-
-      useDoors: false,
-      dEnable: [],
-      dDisable: [],
-      pEnable: [],
-      pDisable: [],
-      tEnable: [],
-      tDisable: [],
-
-      useButtons: false,
-      buttons: [
-        // {
-        //   label: "",
-        //   key: 1,
-        //   color: "green",
-        //   extra: 1,
-        //   linkedExtras: [],
-        //   oppositeExtras: [],
-        //   offExtras: [],
-        //   repair: false,
-        // },
-      ],
-
-      useDefaultStages: false,
-      enableKeys: [],
-      disableKeys: [],
-    },
+    }
   ]);
 
   const updateConfigValue = (id, field, newValue) => {

@@ -17,6 +17,7 @@ const ToggleCheckbox = (props) => {
       <Checkbox.Root
         key={`${configId}${field}`}
         onCheckedChange={handleChange}
+        checked={value}
         className='hover:brightness-125 flex h-5 w-5 items-center justify-center rounded-[4px] bg-zinc-700 aria-checked:bg-emerald-600 outline-none focus:outline-emerald-500'
       >
         <Checkbox.Indicator className=''>

@@ -72,7 +72,7 @@ const StringArrayInput = (props) => {
     setNewValues(newValues);
   };
 
-  const inputs = newValues.map((value, index) => {
+  const inputs = values.map((value, index) => {
     return (
       <StringInput
         key={index}

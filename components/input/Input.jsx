@@ -9,6 +9,7 @@ import ToggleCheckbox from "./ToggleCheckbox";
 import NumberInput from "./NumberInput";
 import SelectBox from "./SelectBox";
 import ButtonInputGroup from "./ButtonInputGroup";
+import { Collapsible } from "@radix-ui/react-collapsible";
 
 const ConfigInputGroup = (props) => {
   const { config } = props;
@@ -17,7 +18,6 @@ const ConfigInputGroup = (props) => {
   return (
     <div className='flex flex-col gap-2 w-full p-2 bg-zinc-800 rounded-md'>
       <div className='flex justify-between w-full'>
-        Config ID: {config.id}
         {/* remove button */}
         <button
           className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-zinc-700 hover:bg-red-500 rounded hover:brightness-125 transition border-t border-zinc-600'
@@ -132,12 +132,16 @@ const ConfigInputGroup = (props) => {
             field={"useSync"}
             value={config.useSync}
           />
-          <StringArrayInput
-            configId={config.id}
-            field={"syncWith"}
-            label={"Sync with"}
-            values={config.syncWith}
-          />
+          <CollapsibleSection open={config.useSync}>
+            <div className="bg-zinc-900/40 p-4 rounded">
+              <StringArrayInput
+                configId={config.id}
+                field={"syncWith"}
+                label={"Sync with"}
+                values={config.syncWith}
+              />
+            </div>
+          </CollapsibleSection>
         </CollapsibleSection>
       </div>
 
