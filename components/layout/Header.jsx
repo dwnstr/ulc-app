@@ -62,10 +62,10 @@ export default function Header() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center">
                 <div className="flex items-center justify-center gap-4 h-full text-shark-200">
-                  <a target="_blank" href="https://github.com" className='hover:scale-110 transition'>
+                  <a target="_blank" href="https://github.com/dwnstr/ulc-web" className='hover:scale-110 transition'>
                     <FaGithub size={22}/>
                   </a>
-                  <a target="_blank" href="https://discord.com" className='hover:scale-110 transition'>
+                  <a target="_blank" href="https://discord.gg/zH3k624aSv" className='hover:scale-110 transition'>
                     <FaDiscord size={24}/>
                   </a>
                 </div>
