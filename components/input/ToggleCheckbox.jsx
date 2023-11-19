@@ -8,7 +8,6 @@ const ToggleCheckbox = (props) => {
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const handleChange = (newValue) => {
-    console.log(newValue);
     updateConfigValue(configId, field, newValue);
   };
 

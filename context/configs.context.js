@@ -64,7 +64,7 @@ const ConfigsProvider = ({ children }) => {
   const updateConfigValue = (id, field, newValue) => {
     // find the index of the config where config.id matches id
     const index = configs.findIndex((config) => config.id === id);
-    console.log(`Updating config with id ${id} at index ${index}`);
+    // console.log(`Updating config with id ${id} at index ${index}`);
     // update the config with the new value
     setConfigs((prevConfigs) => {
       const newConfigs = [...prevConfigs];
