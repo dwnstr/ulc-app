@@ -16,28 +16,30 @@ const StringInput = (props) => {
 
   return (
     <div className='flex gap-2 items-center w-full'>
-      <input
-        key={`${valueIndex}${configId}`}
-        type='text'
-        placeholder='Model Name'
-        className={`bg-shark-900/40 rounded-md px-2 py-1 w-full border border-shark-600 text-shark-300 placeholder:text-shark-500 focus:ring-emerald-500 focus:outline-0 focus:border-emerald-500`}
-        value={value}
-        onChange={(e) => {
-          e.preventDefault();
+      <div className="flex flex-col gap-2 w-full">
+        <input
+          key={`${valueIndex}${configId}`}
+          type='text'
+          placeholder='Model Name'
+          className={`bg-shark-900/40 rounded-md px-2 py-1 w-full border border-shark-600 text-shark-300 placeholder:text-shark-500 focus:ring-emerald-500 focus:outline-0 focus:border-emerald-500`}
+          value={value}
+          onChange={(e) => {
+            e.preventDefault();
 
-          if (e.target.value.length < 1) {
-            setError("Required");
-            return;
-          } else if (e.target.value.includes(" ")) {
-            setError("No spaces");
-            return;
-          }
-
-          setError(null);
-          updateValue(e.target.value);
-        }}
-      />
-      {error ? <p>{error}</p> : null}
+            if (e.target.value.length < 1) {
+              setError("Model name required! Delete this field if it is not needed.");
+            } else if (e.target.value.includes(" ")) {
+              setError("Model name cannot include spaces!");
+            } else {
+              setError(null);
+            }
+            
+            updateValue(e.target.value);
+          }}
+        />
+        {error ? <p className="pl-2 text-sm text-red-500">{error}</p> : null}
+      </div>
+      
       <button
         className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
         onClick={() => {
