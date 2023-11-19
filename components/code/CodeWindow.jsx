@@ -72,11 +72,11 @@ const CodeWindow = () => {
 return ${configsString.substring(1)}`;
 
   return (
-    <section className='flex flex-col gap-2'>
+    <section className='flex flex-col gap-2 border-8 bg-shark-800 border-shark-800 rounded-lg'>
       <CopyButton content={code}/>
       {/* https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme */}
       <SyntaxHighlighter
-        className='w-full h-full text-xs border-8 border-shark-800 rounded-lg'
+        className='w-full h-full text-xs '
         language='lua'
         style={oneDark}
         codeTagProps={{

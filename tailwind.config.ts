@@ -23,39 +23,6 @@ const config: Config = {
           950: "#14161A",
         },
       },
-      
-      keyframes: {
-        slideUpAndFade: {
-          //@ts-ignore
-          from: { opacity: 0, transform: 'translateY(2px)' },
-          //@ts-ignore
-          to: { opacity: 1, transform: 'translateY(0)' },
-        },
-        slideRightAndFade: {
-          //@ts-ignore
-          from: { opacity: 0, transform: 'translateX(-2px)' },
-          //@ts-ignore
-          to: { opacity: 1, transform: 'translateX(0)' },
-        },
-        slideDownAndFade: {
-          //@ts-ignore
-          from: { opacity: 0, transform: 'translateY(-2px)' },
-          //@ts-ignore
-          to: { opacity: 1, transform: 'translateY(0)' },
-        },
-        slideLeftAndFade: {
-          //@ts-ignore
-          from: { opacity: 0, transform: 'translateX(2px)' },
-          //@ts-ignore
-          to: { opacity: 1, transform: 'translateX(0)' },
-        },
-      },
-      animation: {
-        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideRightAndFade: 'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideDownAndFade: 'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideLeftAndFade: 'slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-      },
     },
   },
 

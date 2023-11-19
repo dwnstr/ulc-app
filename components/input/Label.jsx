@@ -5,7 +5,7 @@ const Label = (props) => {
 
   return (
     <div className="text-shark-200 flex gap-2 mb-2">
-      <label>{text}</label>
+      <label className='select-none'>{text}</label>
       <Tooltip text={tooltipText}/>
     </div>
     

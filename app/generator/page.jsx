@@ -8,7 +8,7 @@ export default function Generator() {
   return (
     <main className='bg-shark-950'>
       {/* right section */}
-      <div className='w-full max-w-[1920px] mx-auto sm:grid sm:grid-cols-2 min-h-screen p-8 gap-4'>
+      <div className='w-full max-w-[1400px] mx-auto md:grid sm:grid-cols-2 min-h-screen p-8 gap-4'>
         <Input />
         <CodeWindow />
       </div>

@@ -9,14 +9,13 @@ import ToggleCheckbox from "./ToggleCheckbox";
 import NumberInput from "./NumberInput";
 import SelectBox from "./SelectBox";
 import ButtonInputGroup from "./ButtonInputGroup";
-import { Collapsible } from "@radix-ui/react-collapsible";
 
 const ConfigInputGroup = (props) => {
   const { config } = props;
   const { removeConfig } = useContext(ConfigsContext);
 
   return (
-    <div className='flex flex-col gap-2 w-full p-2 bg-shark-800/70 rounded-md'>
+    <div className='flex flex-col gap-2 w-full p-2 bg-shark-800/70 rounded-lg'>
       <div className='flex justify-between w-full'>
         {/* remove button */}
         <button
@@ -299,7 +298,7 @@ const Input = () => {
           addConfig();
         }}
       >
-        <p className='text-s pointer-events-none'>New config</p>
+        <p className='text-s pointer-events-none'>Add config</p>
         <Plus size={18} />
       </button>
     </section>
