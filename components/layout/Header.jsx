@@ -5,7 +5,6 @@ import { Menu as MenuIcon, X } from 'lucide-react';
 import { FaDiscord, FaGithub } from "react-icons/fa";
 
 const navigation = [
-    { name: 'Generator', href: '/generator', current: true },
     { name: 'Download', href: 'https://github.com/Flohhhhh/ultimate-lighting-controller/releases/latest', current: false },
     { name: 'Docs', href: 'https://docs.dwnstr.com/ulc/overview', current: false },
 ]
