@@ -21,7 +21,7 @@ const ToggleSwitch = (props) => {
       <Label text={label} tooltipText={tooltipText} />
       <Switch.Root
         key={`${configId}${field}`}
-        className='w-10 h-5 bg-zinc-700 rounded-full relative data-[state=checked]:bg-emerald-500 outline-none cursor-default'
+        className='w-10 h-5 bg-shark-600 rounded-full relative data-[state=checked]:bg-emerald-500 outline-none cursor-default cursor-pointer'
         checked={value}
         onCheckedChange={handleChange}
       >

@@ -20,7 +20,7 @@ const StringInput = (props) => {
         key={`${valueIndex}${configId}`}
         type='text'
         placeholder='Model Name'
-        className={`bg-zinc-900/40 rounded-md px-2 py-1 w-full border border-zinc-600 text-zinc-300 placeholder:text-zinc-500`}
+        className={`bg-shark-900/40 rounded-md px-2 py-1 w-full border border-shark-600 text-shark-300 placeholder:text-shark-500 focus:ring-emerald-500 focus:outline-0 focus:border-emerald-500`}
         value={value}
         onChange={(e) => {
           e.preventDefault();
@@ -39,7 +39,7 @@ const StringInput = (props) => {
       />
       {error ? <p>{error}</p> : null}
       <button
-        className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
         onClick={() => {
           removeValue(valueIndex);
         }}
@@ -91,7 +91,7 @@ const StringArrayInput = (props) => {
       <div className='flex justify-between w-full items-center'>
         <Label text={label} tooltipText={tooltipText} />
         <button
-          className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+          className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
           onClick={() => {
             addValue();
           }}

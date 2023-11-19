@@ -37,7 +37,7 @@ const NumberSelectGroup = (props) => {
     return (
       <button
         key={i}
-        className='h-full w-full rounded hover:brightness-125 transition bg-zinc-700 border-t border-zinc-600'
+        className='h-full w-full rounded hover:brightness-125 transition bg-shark-600 border-t border-shark-500'
         onClick={() => {
           if (controlled) {
             setValues(values.concat(i));

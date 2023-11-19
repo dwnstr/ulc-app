@@ -24,7 +24,7 @@ const NumberInput = (props) => {
     <div className='flex flex-col gap-1'>
       <Label text={label} tooltipText={tooltipText} />
       <div className='flex flex-col gap-2'>
-        <div className='w-48 px-2 py-1 rounded-md bg-zinc-700 border border-zinc-600 text-center justify-center'>
+        <div className='w-48 px-2 py-1 rounded-md bg-shark-800 border border-shark-500 text-center justify-center'>
           {displayValue}
         </div>
         <Slider.Root
@@ -36,11 +36,11 @@ const NumberInput = (props) => {
           onValueChange={handleChange}
           onValueCommit={handleCommit}
         >
-          <Slider.Track className='relative bg-zinc-700 grow rounded-full h-2'>
+          <Slider.Track className='relative bg-shark-600 grow rounded-full h-2'>
             <Slider.Range className='absolute bg-emerald-500 rounded-full h-full' />
           </Slider.Track>
           <Slider.Thumb
-            className='block w-5 h-5 bg-white rounded-[10px] hover:bg-violet3 focus:outline-none'
+            className='block w-5 h-5 bg-shark-200 border border-shark-50 rounded-[10px] hover:brightness-90 cursor-pointer focus:outline-none'
             aria-label='Volume'
             value={value}
           />

@@ -16,11 +16,11 @@ const ConfigInputGroup = (props) => {
   const { removeConfig } = useContext(ConfigsContext);
 
   return (
-    <div className='flex flex-col gap-2 w-full p-2 bg-zinc-800 rounded-md'>
+    <div className='flex flex-col gap-2 w-full p-2 bg-shark-800/70 rounded-md'>
       <div className='flex justify-between w-full'>
         {/* remove button */}
         <button
-          className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-zinc-700 hover:bg-red-500 rounded hover:brightness-125 transition border-t border-zinc-600'
+          className='flex items-center justify-center gap-2 h-8 px-4 pb-1 bg-shark-600 hover:bg-red-500 rounded hover:brightness-125 transition border-t border-shark-500'
           onClick={() => {
             removeConfig(config.id);
           }}
@@ -31,7 +31,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* names */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <StringArrayInput
           configId={config.id}
           field={"names"}
@@ -50,7 +50,7 @@ const ConfigInputGroup = (props) => {
         )}
       </div>
       {/* buttons */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           field={"useButtons"}
@@ -69,7 +69,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* cruise lights */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Cruise"}
@@ -106,7 +106,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* park extras */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Park"}
@@ -133,7 +133,7 @@ const ConfigInputGroup = (props) => {
             value={config.useSync}
           />
           <CollapsibleSection open={config.useSync}>
-            <div className="bg-zinc-900/40 p-4 rounded">
+            <div className="bg-shark-900/40 p-4 rounded">
               <StringArrayInput
                 configId={config.id}
                 field={"syncWith"}
@@ -146,7 +146,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* horn extras */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Horn"}
@@ -164,7 +164,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* brake extras */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Brakes"}
@@ -189,7 +189,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* reverse extras */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Reverse"}
@@ -207,7 +207,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* door extras */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Doors"}
@@ -255,7 +255,7 @@ const ConfigInputGroup = (props) => {
       </div>
 
       {/* default stages */}
-      <div className='bg-zinc-700/20 border border-zinc-700 rounded-md px-3 py-2'>
+      <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
           label={"Use Default Stages"}
@@ -294,7 +294,7 @@ const Input = () => {
     <section className='flex flex-col gap-4 h-full w-full '>
       {inputGroups}
       <button
-        className='flex items-center justify-center gap-2 h-10 pb-1 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+        className='flex items-center justify-center gap-2 h-10 pb-1 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-600'
         onClick={() => {
           addConfig();
         }}

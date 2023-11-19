@@ -9,7 +9,7 @@ const ButtonInput = (props) => {
   const { index, button, buttons, setNewButtons, removeButton } = props;
 
   return (
-    <div className='flex gap-2 w-full bg-zinc-900/40 p-2 rounded'>
+    <div className='flex gap-2 w-full bg-shark-800/60 p-2 rounded'>
       <div className='flex flex-col gap-2 w-full '>
         {/* label */}
         <Label
@@ -20,7 +20,7 @@ const ButtonInput = (props) => {
           type='text'
           name='label'
           placeholder='Button Label'
-          className='bg-zinc-900/40 rounded-md px-2 py-1 w-full border border-zinc-600 text-zinc-300 placeholder:text-zinc-500'
+          className='bg-shark-900/40 rounded-md px-2 py-1 w-full border border-shark-600 text-shark-300 placeholder:text-shark-500 focus:ring-emerald-500 focus:outline-0 focus:border-emerald-500'
           value={button.label}
           onChange={(e) => {
             const newButtons = [...buttons];
@@ -124,7 +124,7 @@ const ButtonInput = (props) => {
         />
       </div>
       <button
-        className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
         onClick={() => {
           removeButton(index);
         }}

@@ -4,7 +4,7 @@ const Label = (props) => {
   const { text, tooltipText } = props
 
   return (
-    <div className="text-zinc-300 flex gap-2 mb-2">
+    <div className="text-shark-200 flex gap-2 mb-2">
       <label>{text}</label>
       <Tooltip text={tooltipText}/>
     </div>

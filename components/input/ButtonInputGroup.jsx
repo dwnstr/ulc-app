@@ -54,7 +54,7 @@ const ButtonInputGroup = (props) => {
       <div className='flex justify-between w-full items-center'>
         <Label text={label} tooltipText={tooltipText} />
         <button
-          className='flex items-center justify-center h-7 aspect-square bg-zinc-700 rounded hover:brightness-125 transition border-t border-zinc-600'
+          className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
           onClick={() => {
             addNewButton();
           }}

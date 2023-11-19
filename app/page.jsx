@@ -1,16 +1,12 @@
-"use client";
 import React from "react";
-import Input from "../components/input/Input";
-import CodeWindow from "../components/CodeWindow";
+import { redirect } from 'next/navigation'
 
 export default function Home() {
+
+  redirect('/generator')
+
   return (
-    <main className='bg-zinc-900'>
-      {/* right section */}
-      <div className='w-full max-w-[1920px] mx-auto sm:grid sm:grid-cols-2 min-h-screen p-8 gap-4'>
-        <Input />
-        <CodeWindow />
-      </div>
+    <main className='bg-shark-950 w-full h-screen'>
     </main>
   );
 }
