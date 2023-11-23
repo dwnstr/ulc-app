@@ -4,7 +4,7 @@ import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
 
 const NumberInput = (props) => {
-  const { configId, label, tooltipText, field, value } = props;
+  const { configId, label, tooltip, field, value } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
   const [displayValue, setDisplayValue] = useState(value);
 
@@ -21,8 +21,8 @@ const NumberInput = (props) => {
   };
 
   return (
-    <div className='flex flex-col gap-1'>
-      <Label text={label} tooltipText={tooltipText} />
+    <div className='flex flex-col gap-2'>
+      <Label text={label} tooltip={tooltip} />
       <div className='flex flex-col gap-2'>
         <div className='w-48 px-2 py-1 rounded-md bg-shark-800 border border-shark-500 text-center justify-center'>
           {displayValue}

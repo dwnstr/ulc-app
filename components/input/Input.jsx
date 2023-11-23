@@ -35,9 +35,9 @@ const ConfigInputGroup = (props) => {
           configId={config.id}
           field={"names"}
           label={"Names"}
-          tooltipText={
-            "Enter the model names for each vehicle that will be affected by this configuration."
-          }
+          tooltip={{
+            text: "Enter the model names for each vehicle that will be affected by this configuration.",
+          }}
           values={config.names}
         />
         {config.names.length < 1 ? (
@@ -53,14 +53,17 @@ const ConfigInputGroup = (props) => {
         <ToggleCheckbox
           configId={config.id}
           field={"useButtons"}
-          label={"Use Buttons"}
+          label={"Stage Buttons"}
+          tooltip={{
+            text:"Buttons are the main functionality of ULC, each button will show on the UI and allow the player to change the states of extras with keybindings.",
+            link:"https://docs.dwnstr.com/ulc/configuration/stage-controls"
+          }}
           value={config.useButtons}
         />
         <CollapsibleSection open={config.useButtons}>
           <ButtonInputGroup
             configId={config.id}
             label='Buttons'
-            tooltipText=''
             field={"buttons"}
             values={config.buttons}
           />
@@ -71,7 +74,11 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Cruise"}
+          label={"Smart Cruise Lights"}
+          tooltip={{
+            text: "Smart cruise lights allows you to specify extras that will be force enabled either always or based on time of day.",
+            link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights"
+          }}
           field={"useCruise"}
           value={config.useCruise}
         />
@@ -80,13 +87,18 @@ const ConfigInputGroup = (props) => {
             configId={config.id}
             field={"cruiseExtras"}
             label={"Cruise Extras"}
-            tooltipText='Select each extra that will be used as cruise lights!'
+            tooltip={{
+              text: "Select each extra that will be used as cruise lights!",
+            }}
             values={config.cruiseExtras}
           />
           <SelectBox
             configId={config.id}
             field={"cruiseForced"}
             label='Cruise Forced'
+            tooltip={{
+              text: "Determines when the extras will automatically turn on.",
+            }}
             options={[
               { name: "Never", value: "forceOn = false, useTime = false" },
               { name: "Always", value: "forceOn = true, useTime = false" },
@@ -97,7 +109,10 @@ const ConfigInputGroup = (props) => {
           <ToggleSwitch
             configId={config.id}
             label={"Disable with lights"}
-            tooltipText='If enabled, the cruise lights will turn off when emergency lights are activated.'
+            tooltip={{
+              text: "If enabled, the cruise lights will turn off when emergency lights are activated.",
+              link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights#disablewithlights"
+            }}
             field={"cruiseDWL"}
             value={config.cruiseDWL}
           />
@@ -108,7 +123,11 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Park"}
+          label={"Park Extras"}
+          tooltip={{
+            text: "Allows you to automatically enable or disable extras at a certain speed.",
+            link: "https://docs.dwnstr.com/ulc/configuration/park-patterns-sync"
+          }}
           field={"usePark"}
           value={config.usePark}
         />
@@ -117,20 +136,26 @@ const ConfigInputGroup = (props) => {
             configId={config.id}
             field={"parkExtras"}
             label={"Park Extras"}
-            tooltipText={
-              "These extras will be enabled when the vehicle is parked, and disabled when it is driving."
-            }
+            tooltip={{
+              text: "These extras will be enabled when the vehicle is parked, and disabled when it is driving.",
+            }}
             values={config.parkExtras}
           />
           <NumberSelectGroup
             configId={config.id}
             field={"driveExtras"}
             label={"Drive Extras"}
+            tooltip={{
+              text: "These extras will be enabled when the vehicle is driving, and disabled when it is parked.",
+            }}
             values={config.driveExtras}
           />
           <ToggleSwitch
             configId={config.id}
             label={"Use Sync"}
+            tooltip={{
+              text: "Sync will synchronize the light patterns of specified vehicle models when they are parked near each other.",
+            }}
             field={"useSync"}
             value={config.useSync}
           />
@@ -140,6 +165,9 @@ const ConfigInputGroup = (props) => {
                 configId={config.id}
                 field={"syncWith"}
                 label={"Sync with"}
+                tooltip={{
+                  text: "Enter the model names of vehicles that this config should sync with. If this config is only for one vehicle, you do not need to include it here.",
+                }}
                 values={config.syncWith}
               />
             </div>
@@ -151,7 +179,7 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Horn"}
+          label={"Horn Extras"}
           field={"useHorn"}
           value={config.useHorn}
         />
@@ -169,7 +197,7 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Brakes"}
+          label={"Brake Extras"}
           field={"useBrakes"}
           value={config.useBrakes}
         />
@@ -177,7 +205,10 @@ const ConfigInputGroup = (props) => {
           <NumberInput
             configId={config.id}
             label={"Speed Threshold"}
-            tooltipText='If you start braking below this speed the brake light extras will not activate. If the value is 3, this will enable realistic mode (the brake lights will stay on while stationary). '
+            tooltip={{
+              text: "If you start braking below this speed the brake light extras will not activate. If the value is 3, this will enable realistic mode (the brake lights will stay on while stationary).",
+              link: "https://docs.dwnstr.com/ulc/configuration/brake-extras"
+            }}
             field={"brakeSpeedThreshold"}
             value={config.brakeSpeedThreshold}
           />
@@ -194,7 +225,7 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Reverse"}
+          label={"Reverse Extras"}
           field={"useReverse"}
           value={config.useReverse}
         />
@@ -212,7 +243,11 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Doors"}
+          label={"Door Extras"}
+          tooltip={{
+            text: "These extras will be triggered by doors opening and closing. Adding extra 1 to driver disable will disable it whenever a driver side door opens.",
+            link: "https://docs.dwnstr.com/ulc/configuration/door-extras"
+          }}
           field={"useDoors"}
           value={config.useDoors}
         />
@@ -260,7 +295,11 @@ const ConfigInputGroup = (props) => {
       <div className='bg-shark-700 border border-shark-700 rounded-md px-3 py-2'>
         <ToggleCheckbox
           configId={config.id}
-          label={"Use Default Stages"}
+          label={"Default Stages"}
+          tooltip={{
+            text: "Default stages will set the state of buttons that were configured above whenever the emergency lighting is activated.",
+            link: "https://docs.dwnstr.com/ulc/configuration/default-stages"
+          }}
           field={"useDefaultStages"}
           value={config.useDefaultStages}
         />
@@ -269,12 +308,20 @@ const ConfigInputGroup = (props) => {
             configId={config.id}
             field={"enableKeys"}
             label={"Enable Keys"}
+            tooltip={{
+              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
+            }}
+            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
             values={config.enableKeys}
           />
           <NumberSelectGroup
             configId={config.id}
             field={"disableKeys"}
             label={"Disable Keys"}
+            tooltip={{
+              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
+            }}
+            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
             values={config.disableKeys}
           />
         </CollapsibleSection>

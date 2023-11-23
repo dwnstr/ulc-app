@@ -10,7 +10,7 @@ const SelectBox = (props) => {
     configId,
     field,
     label,
-    tooltipText,
+    tooltip,
     options,
     value,
     setValue,
@@ -39,8 +39,8 @@ const SelectBox = (props) => {
   });
 
   return (
-    <div>
-      <Label text={label} tooltipText={tooltipText} />
+    <div className="flex flex-col gap-2 items-start">
+      <Label text={label} tooltip={tooltip} />
       <Select.Root value={value} onValueChange={handleChange}>
         <Select.Trigger className='inline-flex items-center text-sm justify-center rounded-md px-[15px] leading-none h-[35px] gap-[5px] text-shark-300 bg-shark-800 border border-shark-600 outline-none'>
           <Select.Value />

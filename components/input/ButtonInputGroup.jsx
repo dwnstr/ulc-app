@@ -5,7 +5,7 @@ import ButtonInput from "./ButtonInput";
 import Label from "./Label";
 
 const ButtonInputGroup = (props) => {
-  const { configId, label, tooltipText, field, values } = props;
+  const { configId, label, tooltip, field, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newButtons, setNewButtons] = useState(values);
@@ -51,8 +51,8 @@ const ButtonInputGroup = (props) => {
 
   return (
     <div className='w-full'>
-      <div className='flex justify-between w-full items-center'>
-        <Label text={label} tooltipText={tooltipText} />
+      <div className='flex gap-2 justify-between w-full items-center'>
+        <Label text={label} tooltip={tooltip} />
         <button
           className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500 active:scale-90'
           onClick={() => {

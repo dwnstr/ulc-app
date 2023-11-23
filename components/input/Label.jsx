@@ -1,12 +1,12 @@
 import Tooltip from './Tooltip'
 
 const Label = (props) => {
-  const { text, tooltipText } = props
+  const { text, tooltip } = props
 
   return (
-    <div className="text-shark-200 flex gap-2 mb-2">
+    <div className="text-shark-200 flex gap-2">
       <label className='select-none'>{text}</label>
-      <Tooltip text={tooltipText}/>
+      {tooltip ? (<Tooltip text={tooltip.text} link={tooltip.link}/>) : null}
     </div>
     
   )

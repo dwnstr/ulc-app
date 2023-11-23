@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";
 import { ConfigsContext } from "@/context/configs.context";
+import Label from "@/components/input/Label"
 
 const ToggleCheckbox = (props) => {
-  const { configId, label, field, value } = props;
+  const { configId, label, tooltip, field, value } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const handleChange = (newValue) => {
@@ -23,7 +24,7 @@ const ToggleCheckbox = (props) => {
           <Check className='w-4 h-4' />
         </Checkbox.Indicator>
       </Checkbox.Root>
-      <label className='text-sm text-shark-200 font-bold select-none'>{label}</label>
+      <Label text={label} tooltip={tooltip}/>
     </div>
   );
 };

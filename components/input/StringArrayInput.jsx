@@ -41,7 +41,7 @@ const StringInput = (props) => {
       </div>
       
       <button
-        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
+        className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:bg-red-500 hover:brightness-125 transition border-t border-shark-500'
         onClick={() => {
           removeValue(valueIndex);
         }}
@@ -53,7 +53,7 @@ const StringInput = (props) => {
 };
 
 const StringArrayInput = (props) => {
-  const { configId, field, label, tooltipText, values } = props;
+  const { configId, field, label, tooltip, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newValues, setNewValues] = useState(values);
@@ -91,7 +91,7 @@ const StringArrayInput = (props) => {
   return (
     <div className='w-full'>
       <div className='flex justify-between w-full items-center'>
-        <Label text={label} tooltipText={tooltipText} />
+        <Label text={label} tooltip={tooltip} />
         <button
           className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500'
           onClick={() => {

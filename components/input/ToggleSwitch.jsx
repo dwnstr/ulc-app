@@ -4,7 +4,7 @@ import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
 
 const ToggleSwitch = (props) => {
-  const { controlled, configId, label, tooltipText, field, value, setValue } =
+  const { controlled, configId, label, tooltip, field, value, setValue } =
     props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
@@ -18,7 +18,7 @@ const ToggleSwitch = (props) => {
 
   return (
     <div className='flex flex-col gap-2'>
-      <Label text={label} tooltipText={tooltipText} />
+      <Label text={label} tooltip={tooltip} />
       <Switch.Root
         key={`${configId}${field}`}
         className='w-10 h-5 bg-shark-600 rounded-full relative data-[state=checked]:bg-emerald-500 outline-none cursor-default cursor-pointer'
