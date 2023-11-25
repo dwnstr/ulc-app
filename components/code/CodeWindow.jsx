@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ConfigsContext } from "@/context/configs.context";
-import CopyButton from "./CopyButton"
+import CopyButton from "./CopyButton";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -12,8 +12,8 @@ const CodeWindow = () => {
     .map((config) => {
       return `
 {names = {${config.names.map((name) => {
-    return `"${name}"`
-})}},
+        return `"${name}"`;
+      })}},
   steadyBurnConfig = {
     ${config.cruiseForced}
     disableWithLights = ${config.cruiseDWL},
@@ -23,7 +23,7 @@ const CodeWindow = () => {
     usePark = ${config.usePark},
     useSync = ${config.useSync},
     syncWith = {${config.syncWith.map((name) => {
-      return `"${name}"`
+      return `"${name}"`;
     })}},
     pExtras = {${config.parkExtras}},
     dExtras = {${config.driveExtras}}
@@ -35,7 +35,8 @@ const CodeWindow = () => {
   brakeConfig = {
     useBrakes = ${config.useBrakes},
     speedThreshold = ${config.brakeSpeedThreshold},
-    brakeExtras = {${config.brakeExtras}}
+    brakeExtras = {${config.brakeExtras}},
+    disableExtras = {${config.brakeDisableExtras}}
   },
   reverseConfig = {
     useReverse = ${config.useReverse},
@@ -49,7 +50,13 @@ const CodeWindow = () => {
   }, 
   buttons = {
     ${config.buttons.map((button) => {
-      return `{label = "${button.label}", key = ${button.key}, color = "${button.color}", extra = ${button.extra}, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${button.repair}}`
+      return `{label = "${button.label}", key = ${button.key}, color = "${
+        button.color
+      }", extra = ${
+        button.extra
+      }, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
+        button.repair
+      }}`;
     })}
   },
   defaultStages = {
@@ -73,7 +80,7 @@ return ${configsString.substring(1)}`;
 
   return (
     <section className='flex flex-col gap-2 border-8 bg-shark-800 border-shark-800 rounded-lg'>
-      <CopyButton content={code}/>
+      <CopyButton content={code} />
       {/* https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme */}
       <SyntaxHighlighter
         className='w-full h-full text-xs '

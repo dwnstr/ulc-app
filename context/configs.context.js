@@ -27,8 +27,9 @@ const ConfigsProvider = ({ children }) => {
 
       useBrakes: false,
       useRealBrakes: true,
-      brakeSpeedThreshold: 4,
+      brakeSpeedThreshold: 3,
       brakeExtras: [],
+      brakeDisableExtras: [],
 
       useReverse: false,
       reverseExtras: [],
@@ -58,7 +59,7 @@ const ConfigsProvider = ({ children }) => {
       useDefaultStages: false,
       enableKeys: [],
       disableKeys: [],
-    }
+    },
   ]);
 
   const updateConfigValue = (id, field, newValue) => {
@@ -96,8 +97,9 @@ const ConfigsProvider = ({ children }) => {
 
         useBrakes: false,
         useRealBrakes: true,
-        brakeSpeedThreshold: 4,
+        brakeSpeedThreshold: 3,
         brakeExtras: [],
+        brakeDisableExtras: [],
 
         useReverse: false,
         reverseExtras: [],

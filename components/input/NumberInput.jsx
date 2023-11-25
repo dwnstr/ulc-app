@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import * as Slider from "@radix-ui/react-slider";
 import { ConfigsContext } from "@/context/configs.context";
 import Label from "./Label";
@@ -19,6 +19,10 @@ const NumberInput = (props) => {
   const handleCommit = (newValue) => {
     updateConfigValue(configId, field, newValue);
   };
+
+  useEffect(() => {
+    handleChange(3);
+  }, [value]);
 
   return (
     <div className='flex flex-col gap-2'>

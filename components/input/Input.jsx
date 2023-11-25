@@ -55,8 +55,8 @@ const ConfigInputGroup = (props) => {
           field={"useButtons"}
           label={"Stage Buttons"}
           tooltip={{
-            text:"Buttons are the main functionality of ULC, each button will show on the UI and allow the player to change the states of extras with keybindings.",
-            link:"https://docs.dwnstr.com/ulc/configuration/stage-controls"
+            text: "Buttons are the main functionality of ULC, each button will show on the UI and allow the player to change the states of extras with keybindings.",
+            link: "https://docs.dwnstr.com/ulc/configuration/stage-controls",
           }}
           value={config.useButtons}
         />
@@ -77,7 +77,7 @@ const ConfigInputGroup = (props) => {
           label={"Smart Cruise Lights"}
           tooltip={{
             text: "Smart cruise lights allows you to specify extras that will be force enabled either always or based on time of day.",
-            link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights"
+            link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights",
           }}
           field={"useCruise"}
           value={config.useCruise}
@@ -111,7 +111,7 @@ const ConfigInputGroup = (props) => {
             label={"Disable with lights"}
             tooltip={{
               text: "If enabled, the cruise lights will turn off when emergency lights are activated.",
-              link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights#disablewithlights"
+              link: "https://docs.dwnstr.com/ulc/configuration/cruise-lights#disablewithlights",
             }}
             field={"cruiseDWL"}
             value={config.cruiseDWL}
@@ -126,7 +126,7 @@ const ConfigInputGroup = (props) => {
           label={"Park Extras"}
           tooltip={{
             text: "Allows you to automatically enable or disable extras at a certain speed.",
-            link: "https://docs.dwnstr.com/ulc/configuration/park-patterns-sync"
+            link: "https://docs.dwnstr.com/ulc/configuration/park-patterns-sync",
           }}
           field={"usePark"}
           value={config.usePark}
@@ -207,7 +207,7 @@ const ConfigInputGroup = (props) => {
             label={"Speed Threshold"}
             tooltip={{
               text: "If you start braking below this speed the brake light extras will not activate. If the value is 3, this will enable realistic mode (the brake lights will stay on while stationary).",
-              link: "https://docs.dwnstr.com/ulc/configuration/brake-extras"
+              link: "https://docs.dwnstr.com/ulc/configuration/brake-extras",
             }}
             field={"brakeSpeedThreshold"}
             value={config.brakeSpeedThreshold}
@@ -215,8 +215,20 @@ const ConfigInputGroup = (props) => {
           <NumberSelectGroup
             configId={config.id}
             field={"brakeExtras"}
-            label={"Brake Extras"}
+            label={"Enable Extras"}
+            tooltip={{
+              text: "These extras will be enabled when the vehicle is braking.",
+            }}
             values={config.brakeExtras}
+          />
+          <NumberSelectGroup
+            configId={config.id}
+            field={"brakeDisableExtras"}
+            label={"Disable Extras"}
+            tooltip={{
+              text: "These extras will be disabled when the vehicle is braking.",
+            }}
+            values={config.brakeDisableExtras}
           />
         </CollapsibleSection>
       </div>
@@ -246,7 +258,7 @@ const ConfigInputGroup = (props) => {
           label={"Door Extras"}
           tooltip={{
             text: "These extras will be triggered by doors opening and closing. Adding extra 1 to driver disable will disable it whenever a driver side door opens.",
-            link: "https://docs.dwnstr.com/ulc/configuration/door-extras"
+            link: "https://docs.dwnstr.com/ulc/configuration/door-extras",
           }}
           field={"useDoors"}
           value={config.useDoors}
@@ -298,7 +310,7 @@ const ConfigInputGroup = (props) => {
           label={"Default Stages"}
           tooltip={{
             text: "Default stages will set the state of buttons that were configured above whenever the emergency lighting is activated.",
-            link: "https://docs.dwnstr.com/ulc/configuration/default-stages"
+            link: "https://docs.dwnstr.com/ulc/configuration/default-stages",
           }}
           field={"useDefaultStages"}
           value={config.useDefaultStages}
