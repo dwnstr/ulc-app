@@ -12,7 +12,7 @@ const ConfigsProvider = ({ children }) => {
       names: [""],
 
       useCruise: false,
-      cruiseForced: `forceOn = false, useTime = false`,
+      cruiseForced: `forceOn = false, useTime = false,`,
       cruiseDWL: false,
       cruiseExtras: [],
 
@@ -82,7 +82,7 @@ const ConfigsProvider = ({ children }) => {
         names: [""],
 
         useCruise: false,
-        cruiseForced: `forceOn = false, useTime = false`,
+        cruiseForced: `forceOn = false, useTime = false,`,
         cruiseDWL: false,
         cruiseExtras: [],
 
