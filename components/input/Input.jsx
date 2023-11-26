@@ -100,9 +100,9 @@ const ConfigInputGroup = (props) => {
               text: "Determines when the extras will automatically turn on.",
             }}
             options={[
-              { name: "Never", value: "forceOn = false, useTime = false" },
-              { name: "Always", value: "forceOn = true, useTime = false" },
-              { name: "At night", value: "forceOn = false, useTime = true" },
+              { name: "Never", value: "forceOn = false, useTime = false," },
+              { name: "Always", value: "forceOn = true, useTime = false," },
+              { name: "At night", value: "forceOn = false, useTime = true," },
             ]}
             value={config.cruiseForced}
           />
