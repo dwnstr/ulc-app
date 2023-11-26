@@ -7,7 +7,12 @@ import { FaDiscord, FaGithub } from "react-icons/fa";
 const navigation = [
   {
     name: "Vehicles",
-    href: "https://ulc.dwnstr.com/vehicles",
+    href: "/vehicles",
+    current: false,
+  },
+  {
+    name: "Generator",
+    href: "/generator",
     current: false,
   },
   {
@@ -63,7 +68,7 @@ export default function Header() {
                       <a
                         key={item.name}
                         href={item.href}
-                        target='blank'
+                        // target='blank'
                         className={classNames(
                           "bg-shark-800 text-shark-200 hover:bg-shark-700 hover:text-white transition",
                           "rounded-md px-3 py-2 text-sm font-medium"
