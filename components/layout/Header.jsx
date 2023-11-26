@@ -6,6 +6,11 @@ import { FaDiscord, FaGithub } from "react-icons/fa";
 
 const navigation = [
   {
+    name: "Vehicles",
+    href: "https://ulc.dwnstr.com/vehicles",
+    current: false,
+  },
+  {
     name: "Download",
     href: "https://github.com/Flohhhhh/ultimate-lighting-controller/releases/latest",
     current: false,
