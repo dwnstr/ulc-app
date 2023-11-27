@@ -1,30 +1,19 @@
 import React from "react";
 import { vehicleData } from "@/public/vehicles";
-
-const vehicleCard = (vehicle) => {
-  return (
-    <div className='bg-shark-800 rounded-lg shadow-lg p-4'>
-      <div className='flex flex-col'>
-        <div className='flex flex-row justify-between'>
-          <h2 className='text-xl font-bold text-shark-100'>{vehicle.title}</h2>
-          <h2 className='text-xl font-bold text-shark-100'>
-            {vehicle.description}
-          </h2>
-        </div>
-      </div>
-    </div>
-  );
-};
+import VehicleCard from "@/components/vehicles/VehicleCard";
 
 export default function Vehicles() {
   console.log(vehicleData);
 
   const cards = vehicleData.map((vehicle) => {
-    return vehicleCard(vehicle);
+    return VehicleCard(vehicle);
   });
+
   return (
     <main className='bg-shark-950 min-h-screen'>
-      <div className='max-w-7xl mx-auto'>{cards}</div>
+      <div className='max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-2'>
+        {cards}
+      </div>
     </main>
   );
 }
