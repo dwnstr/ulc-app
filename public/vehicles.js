@@ -29,4 +29,14 @@ export const vehicleData = [
     isPack: true,
     features: ["stages", "park", "brake", "defaults", "cruise"],
   },
+  {
+    id: 4,
+    title: "My second vehicle pack",
+    description: "This is my second vehicle pack",
+    price: 4000,
+    image: `https://picsum.photos/500?blur=5?random=4`,
+    url: "https://www.google.com",
+    isPack: true,
+    features: ["stages", "park", "brake", "defaults", "cruise"],
+  },
 ];

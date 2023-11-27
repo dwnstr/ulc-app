@@ -11,7 +11,7 @@ export default function Vehicles() {
 
   return (
     <main className='bg-shark-950 min-h-screen'>
-      <div className='max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-2'>
+      <div className='max-w-7xl mx-auto grid sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-12'>
         {cards}
       </div>
     </main>
