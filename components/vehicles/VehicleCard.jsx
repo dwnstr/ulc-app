@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { ModalContext } from '@/context/modal.context'
+import LeaveConfirmModal  from '@/components/modals/LeaveConfirmModal'
 import { ExternalLink } from "lucide-react";
 
 // TODO https://docs.clickvote.dev/quickstart
 const VehicleCard = (props) => {
   const { vehicle, setFilterTags } = props;
+  const { openModal } = useContext(ModalContext)
 
   const priceFormatted = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -32,9 +35,11 @@ const VehicleCard = (props) => {
         {/* creator */}
         <span className='text-shark-300 select-none cursor-events-none'>
           by{" "}
-          <a href={vehicle.creatorLink} className='text-emerald-500 underline'>
+          <button 
+            onClick={() => {openModal(<LeaveConfirmModal href={vehicle.creatorLink}/>)}}
+            className='text-emerald-500 underline'>
             {vehicle.creatorName}
-          </a>
+          </button>
         </span>
 
         {/* features tags */}
@@ -87,7 +92,7 @@ const VehicleCard = (props) => {
           </button> */}
           <button
             onClick={() => {
-              console.log("Hello");
+              openModal(<LeaveConfirmModal href={vehicle.url} />)
             }}
             className={`${
               vehicle.price > 0 ? "bg-shark-600" : "bg-emerald-500"
