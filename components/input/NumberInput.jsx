@@ -21,7 +21,7 @@ const NumberInput = (props) => {
   };
 
   useEffect(() => {
-    handleChange(3);
+    handleChange(value);
   }, [value]);
 
   return (
