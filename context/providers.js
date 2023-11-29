@@ -1,7 +1,14 @@
 "use client";
 
 import { ConfigsProvider } from "./configs.context";
+import { ModalProvider } from "./modal.context"
 
 export const Providers = ({ children }) => {
-  return <ConfigsProvider>{children}</ConfigsProvider>;
+  return (
+    <ModalProvider>
+      <ConfigsProvider>
+        {children}
+      </ConfigsProvider>
+    </ModalProvider>
+  )
 };

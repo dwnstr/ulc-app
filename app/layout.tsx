@@ -6,6 +6,7 @@ import "./globals.css";
 import { Providers } from "../context/providers";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Modal from "@/components/modals/Modal"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Modal />
           <Analytics />
         </Providers>
       </body>
