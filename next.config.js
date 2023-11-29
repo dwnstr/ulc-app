@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.gyazo.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
     ],
   },
 };

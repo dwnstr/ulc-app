@@ -8,15 +8,19 @@ export default function VehicleCards(props) {
   // get all tags from every item in vehicles.features
   const getAllTags = () => {
     let result = [];
-  
-    vehicles.forEach(vehicle => {
-      vehicle.features.forEach(feature => {if (!result.includes(feature)) {result.push(feature);}});
+
+    vehicles.forEach((vehicle) => {
+      vehicle.features.forEach((feature) => {
+        if (!result.includes(feature)) {
+          result.push(feature);
+        }
+      });
     });
-    
-    return result.sort(
-      (a, b) => a.toLowerCase().localeCompare(b.toLowerCase())
-    )
-  }
+
+    return result.sort((a, b) =>
+      a.toLowerCase().localeCompare(b.toLowerCase())
+    );
+  };
   const possibleTags = getAllTags();
   const [filterTags, setFilterTags] = useState([]);
 
@@ -50,8 +54,8 @@ export default function VehicleCards(props) {
   return (
     <div>
       {/* filter tag cloud */}
-      <div className="flex flex-col gap-2 bg-shark-800 border border-shark-600 rounded-xl p-4 mb-4">
-        <span className="text-shark-300 px-1">Filters</span>
+      <div className='flex flex-col gap-2 bg-shark-800 border border-shark-600 rounded-xl p-4 mb-4'>
+        <span className='text-shark-300 px-1'>Filters</span>
         <div className=' flex flex-wrap gap-2 '>
           {possibleTags.map((tag) => {
             return (
@@ -75,8 +79,10 @@ export default function VehicleCards(props) {
             );
           })}
         </div>
+        <p className='text-shark-300'>
+          Entries are sorted by price (lowest to highest)
+        </p>
       </div>
-      
 
       {/* cards */}
       <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4'>
