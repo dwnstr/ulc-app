@@ -74,6 +74,19 @@ const data = [
     isPack: false,
     features: ["stage buttons", "park pattern", "cruise lights"],
   },
+  {
+    id: 7,
+    title: "2022 SRT Durango",
+    description:
+      "This High quality model has Red/Blue Lighting, Templated with multi livery support, And park pattern lighting that will sync up with other vehicles (Vehicles can be changed, added, or removed in ulc.lua)",
+    creatorName: "TG Development",
+    creatorLink: "https://discord.gg/WyYbTfS6qQ",
+    price: 999,
+    image: "https://i.imgur.com/lMhMbkmh.jpg",
+    url: "https://tgdevelopment.tebex.io/package/6015421",
+    isPack: false,
+    features: ["park pattern", "park sync"],
+  },
 ];
 
 // export data sorted by price
