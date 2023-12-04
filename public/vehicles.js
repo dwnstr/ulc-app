@@ -87,6 +87,18 @@ const data = [
     isPack: false,
     features: ["park pattern", "park sync"],
   },
+  {
+    id: 8,
+    title: "2019 Dodge Demon",
+    description: "uWu 2019 demon scawy (check out tgdev discord for wip and more)",
+    creatorName: "TG Development",
+    creatorLink: "https://discord.gg/WyYbTfS6qQ",
+    price: 999,
+    image: "https://i.imgur.com/vIE5QBp.png",
+    url: "https://tgdevelopment.tebex.io/package/6021315",
+    isPack: false,
+    features: ["park pattern", "park sync"],
+  }
 ];
 
 // export data sorted by price
