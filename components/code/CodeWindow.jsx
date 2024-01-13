@@ -49,14 +49,14 @@ const CodeWindow = () => {
     trunk = {enable ={${config.tEnable}}, disable = {${config.tDisable}}}
   }, 
   buttons = {
-    ${config.buttons.map((button) => {
-      return `{label = "${button.label}", key = ${button.key}, color = "${
+    ${config.buttons.map((button, index) => {
+      return (`${index !==0? '\n\t\t': ''}{label = "${button.label}", key = ${button.key}, color = "${
         button.color
       }", extra = ${
         button.extra
       }, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
         button.repair
-      }}`;
+      }}`);
     })}
   },
   defaultStages = {
