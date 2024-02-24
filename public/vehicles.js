@@ -74,6 +74,18 @@ const data = [
     isPack: false,
     features: ["stage buttons", "park pattern", "cruise lights"],
   },
+  {
+    id: 7,
+    title: "Miami Dade Charger Pack",
+    description: "Detailed and accurate replicas of 2018 Miami Dade Chargers",
+    creatorName: "Blackcloud",
+    creatorLink: "https://discord.gg/75fZzwHvek",
+    price: 5000,
+    image: "https://i.imgur.com/OZiKq91.png",
+    url: "https://discord.gg/75fZzwHvek",
+    isPack: true,
+    features: ["stage buttons", "park pattern", "takedowns"],
+  }
 ];
 
 // export data sorted by price
