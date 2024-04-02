@@ -85,7 +85,63 @@ const data = [
     url: "https://discord.gg/75fZzwHvek",
     isPack: true,
     features: ["stage buttons", "park pattern", "takedowns"],
-  }
+  },
+  {
+    id: 8,
+    title: "Whelen Dodge Ram 1500 Big-Horn",
+    description: "A Big-horn outfitted with a slicktop whelen package.",
+    creatorName: "Sova Modifcations / Phoenix Development",
+    creatorLink: "https://discord.com/invite/swBn5B5FSQ",
+    price: 1000,
+    image: "https://i.imgur.com/6lYEVai.jpeg",
+    url: "https://discord.com/invite/swBn5B5FSQ",
+    isPack: false,
+    features: ["park pattern", "horn pattern"],
+  },
+  {
+    id: 9,
+    title: "Los Santos 2023 Mini Pack",
+    description:
+      "Pack featuring a 2023 Charger and Tahoe outfitted with Federal Signal lighting including a Valor lightbar and Arges spotlight.",
+    creatorName: "Preston",
+    creatorLink: "https://discord.gg/JJbgME3Rc4",
+    price: 5500,
+    image: "https://i.imgur.com/AWihlBu.jpeg",
+    url: "https://discord.gg/JJbgME3Rc4",
+    isPack: true,
+    features: [
+      "park pattern",
+      "cruise lights",
+      "scene lights",
+      "stage buttons",
+    ],
+  },
+  {
+    id: 10,
+    title: "LEO 1000 Superbike",
+    description:
+      "A superbike with red/blue and blue/white lighting options and multi-livery support.",
+    creatorName: "Medic909",
+    creatorLink: "https://discord.gg/code3development",
+    price: 2500,
+    image: "https://i.imgur.com/URdlhF5.jpeg",
+    url: "https://discord.gg/code3development",
+    isPack: false,
+    features: ["cruise lights", "takedowns"],
+  },
+  {
+    id: 11,
+    title: "2022 Challenger Hellcat",
+    description:
+      "LEO Hellcat with slicktop lighting package and multi-livery support.",
+    creatorName: "Medic909",
+    creatorLink: "https://discord.gg/code3development",
+    price: 3000,
+    image: "https://i.imgur.com/uJxiD2Z.jpeg",
+    url: "https://discord.gg/code3development",
+    isPack: false,
+    features: ["cruise lights", "takedowns"],
+  },
 ];
 
 // export data sorted by price
