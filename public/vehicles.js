@@ -150,7 +150,7 @@ const data = [
     creatorName: "Scorpionfam",
     creatorLink: "https://discord.gg/6xHyEE9",
     price: 3000,
-    image: "https://imgur.com/IcsBdyp",
+    image: "https://i.imgur.com/IcsBdyp.jpeg",
     url: "https://discord.gg/6xHyEE9",
     isPack: false,
     features: [
