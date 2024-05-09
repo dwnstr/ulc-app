@@ -146,7 +146,7 @@ const data = [
     id: 12,
     title: "UHP 2016 FPIS",
     description:
-      "This is a NON-ELS 2016 FPIS for UHP. it is prob the only and most accurate one you will find. The FPIS comes with the option for a reflective livery for realism or without it for other liveries. Light pattern is 1:1 accurate with UHP's pattern. also features a working Red Dome light in the interior!",
+      "2016 UHP FPIS featuring Traffic advisors, scene lighting, and the option for a reflective livery",
     creatorName: "Scorpionfam",
     creatorLink: "https://discord.gg/6xHyEE9",
     price: 3000,
