@@ -120,7 +120,7 @@ const data = [
     id: 10,
     title: "LEO 1000 Superbike",
     description:
-      "A superbike with red/blue and blue/white lighting options and multi-livery support.",
+      "A superbike with red/blue & blue/white lighting options and multi-livery support.",
     creatorName: "Medic909",
     creatorLink: "https://discord.gg/code3development",
     price: 2500,
