@@ -142,6 +142,23 @@ const data = [
     isPack: false,
     features: ["cruise lights", "takedowns"],
   },
+  {
+    id: 12,
+    title: "UHP 2016 FPIS",
+    description:
+      "2016 UHP FPIS featuring Traffic advisors, scene lighting, and the option for a reflective livery",
+    creatorName: "Scorpionfam",
+    creatorLink: "https://discord.gg/6xHyEE9",
+    price: 3000,
+    image: "https://media.discordapp.net/attachments/1236915970124025948/1236916167222755328/20240505222941_1.jpg?ex=663d0b33&is=663bb9b3&hm=283ff67a54a0acc35685b763b63ba6e849de997f40cfd27ea9781467857ebcd1&=&format=webp&width=1202&height=676",
+    url: "https://discord.gg/6xHyEE9",
+    isPack: false,
+    features: [
+      "takedowns",
+      "scene lights",
+      "stage buttons",
+    ],
+  },
 ];
 
 // export data sorted by price
