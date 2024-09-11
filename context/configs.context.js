@@ -24,6 +24,7 @@ const ConfigsProvider = ({ children }) => {
 
       useHorn: false,
       hornExtras: [],
+      hornDisableExtras: [],
 
       useBrakes: false,
       useRealBrakes: true,
@@ -33,6 +34,7 @@ const ConfigsProvider = ({ children }) => {
 
       useReverse: false,
       reverseExtras: [],
+      reverseDisableExtras: [],
 
       useDoors: false,
       dEnable: [],

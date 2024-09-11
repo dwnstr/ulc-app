@@ -31,6 +31,7 @@ const CodeWindow = () => {
   hornConfig = {
     useHorn = ${config.useHorn},
     hornExtras = {${config.hornExtras}},
+    disableExtras = {${config.hornDisableExtras}}
   },
   brakeConfig = {
     useBrakes = ${config.useBrakes},
@@ -40,7 +41,8 @@ const CodeWindow = () => {
   },
   reverseConfig = {
     useReverse = ${config.useReverse},
-    reverseExtras = {${config.reverseExtras}}
+    reverseExtras = {${config.reverseExtras}},
+    disableExtras = {${config.reverseDisableExtras}}
   },
   doorConfig = {
     useDoors = ${config.useDoors},
@@ -50,13 +52,13 @@ const CodeWindow = () => {
   }, 
   buttons = {
     ${config.buttons.map((button, index) => {
-      return (`${index !==0? '\n\t\t': ''}{label = "${button.label}", key = ${button.key}, color = "${
-        button.color
-      }", extra = ${
+      return `${index !== 0 ? "\n\t\t" : ""}{label = "${button.label}", key = ${
+        button.key
+      }, color = "${button.color}", extra = ${
         button.extra
       }, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
         button.repair
-      }}`);
+      }}`;
     })}
   },
   defaultStages = {
@@ -79,12 +81,12 @@ const CodeWindow = () => {
 return ${configsString.substring(1)}`;
 
   return (
-    <section className='flex flex-col gap-2 border-8 bg-shark-800 border-shark-800 rounded-lg'>
+    <section className="flex flex-col gap-2 border-8 bg-shark-800 border-shark-800 rounded-lg">
       <CopyButton content={code} />
       {/* https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme */}
       <SyntaxHighlighter
-        className='w-full h-full text-xs '
-        language='lua'
+        className="w-full h-full text-xs "
+        language="lua"
         style={oneDark}
         codeTagProps={{
           className: "text-s",
