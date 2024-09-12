@@ -58,6 +58,9 @@ const ConfigsProvider = ({ children }) => {
         // },
       ],
 
+      useStages: false,
+      stageKeys: [],
+
       useDefaultStages: false,
       enableKeys: [],
       disableKeys: [],
@@ -96,6 +99,7 @@ const ConfigsProvider = ({ children }) => {
 
         useHorn: false,
         hornExtras: [],
+        hornDisableExtras: [],
 
         useBrakes: false,
         useRealBrakes: true,
@@ -105,6 +109,7 @@ const ConfigsProvider = ({ children }) => {
 
         useReverse: false,
         reverseExtras: [],
+        reverseDisableExtras: [],
 
         useDoors: false,
         dEnable: [],
@@ -127,6 +132,9 @@ const ConfigsProvider = ({ children }) => {
           //   repair: false,
           // },
         ],
+
+        useStages: false,
+        stageKeys: [],
 
         useDefaultStages: false,
         enableKeys: [],

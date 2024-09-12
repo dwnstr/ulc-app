@@ -53,7 +53,7 @@ const ConfigInputGroup = (props) => {
         <ToggleCheckbox
           configId={config.id}
           field={"useButtons"}
-          label={"Stage Buttons"}
+          label={"Buttons"}
           tooltip={{
             text: "Buttons are the main functionality of ULC, each button will show on the UI and allow the player to change the states of extras with keybindings.",
             link: "https://docs.dwnstr.com/ulc/configuration/stage-controls",
@@ -66,6 +66,68 @@ const ConfigInputGroup = (props) => {
             label="Buttons"
             field={"buttons"}
             values={config.buttons}
+          />
+        </CollapsibleSection>
+      </div>
+
+      {/* stages */}
+      <div className="bg-shark-700 border border-shark-700 rounded-md px-3 py-2">
+        <ToggleCheckbox
+          configId={config.id}
+          label={"Stages"}
+          tooltip={{
+            text: "Buttons listed as stages will change their behavior to stay enabled if pressed when another stage is active. This gives a more predictable stage behavior where stages can be sequential. See docs for examples.",
+            link: "https://docs.dwnstr.com/ulc/configuration/smart-stages",
+          }}
+          field={"useStages"}
+          value={config.useStages}
+        />
+        <CollapsibleSection open={config.useStages}>
+          <NumberSelectGroup
+            configId={config.id}
+            field={"stageKeys"}
+            label={"Stage Keys"}
+            tooltip={{
+              text: "Specify buttons (by their key) that will behave as stages.",
+            }}
+            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+            values={config.stageKeys}
+          />
+        </CollapsibleSection>
+      </div>
+
+      {/* default stages */}
+      <div className="bg-shark-700 border border-shark-700 rounded-md px-3 py-2">
+        <ToggleCheckbox
+          configId={config.id}
+          label={"Default Stages"}
+          tooltip={{
+            text: "Default stages will set the state of buttons that were configured above whenever the emergency lighting is activated.",
+            link: "https://docs.dwnstr.com/ulc/configuration/default-stages",
+          }}
+          field={"useDefaultStages"}
+          value={config.useDefaultStages}
+        />
+        <CollapsibleSection open={config.useDefaultStages}>
+          <NumberSelectGroup
+            configId={config.id}
+            field={"enableKeys"}
+            label={"Enable Keys"}
+            tooltip={{
+              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
+            }}
+            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+            values={config.enableKeys}
+          />
+          <NumberSelectGroup
+            configId={config.id}
+            field={"disableKeys"}
+            label={"Disable Keys"}
+            tooltip={{
+              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
+            }}
+            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+            values={config.disableKeys}
           />
         </CollapsibleSection>
       </div>
@@ -311,42 +373,6 @@ const ConfigInputGroup = (props) => {
             field={"tDisable"}
             label={"Trunk Disable"}
             values={config.tDisable}
-          />
-        </CollapsibleSection>
-      </div>
-
-      {/* default stages */}
-      <div className="bg-shark-700 border border-shark-700 rounded-md px-3 py-2">
-        <ToggleCheckbox
-          configId={config.id}
-          label={"Default Stages"}
-          tooltip={{
-            text: "Default stages will set the state of buttons that were configured above whenever the emergency lighting is activated.",
-            link: "https://docs.dwnstr.com/ulc/configuration/default-stages",
-          }}
-          field={"useDefaultStages"}
-          value={config.useDefaultStages}
-        />
-        <CollapsibleSection open={config.useDefaultStages}>
-          <NumberSelectGroup
-            configId={config.id}
-            field={"enableKeys"}
-            label={"Enable Keys"}
-            tooltip={{
-              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
-            }}
-            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-            values={config.enableKeys}
-          />
-          <NumberSelectGroup
-            configId={config.id}
-            field={"disableKeys"}
-            label={"Disable Keys"}
-            tooltip={{
-              text: "Specify buttons by their keys that will always be activated when the lights turn on.",
-            }}
-            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-            values={config.disableKeys}
           />
         </CollapsibleSection>
       </div>

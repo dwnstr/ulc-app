@@ -61,6 +61,10 @@ const CodeWindow = () => {
       }}`;
     })}
   },
+  stages = {
+    useStages = ${config.useStages},
+    stageKeys = {${config.stageKeys}},
+  },
   defaultStages = {
     useDefaults = ${config.useDefaultStages},
     enableKeys = {${config.enableKeys}},
