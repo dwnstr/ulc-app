@@ -15,13 +15,26 @@ const ButtonInputGroup = (props) => {
   }, [newButtons]);
 
   const addNewButton = () => {
+    const existingKeys = newButtons.map((button) => button.key);
+    let newKey = 1;
+    while (existingKeys.includes(newKey) && newKey <= 9) {
+      newKey++;
+    }
+    if (newKey > 9) {
+      console.error("Cannot add more than 9 buttons");
+      return;
+    }
+
+    // sort the buttons by key
+    newButtons.sort((a, b) => a.key - b.key);
+
     setNewButtons([
       ...newButtons,
       {
         label: "",
-        key: 1,
+        key: newKey,
         color: "green",
-        extra: 1,
+        extra: newKey,
         linkedExtras: [],
         oppositeExtras: [],
         offExtras: [],
@@ -50,11 +63,11 @@ const ButtonInputGroup = (props) => {
   });
 
   return (
-    <div className='w-full'>
-      <div className='flex gap-2 justify-between w-full items-center'>
+    <div className="w-full">
+      <div className="flex gap-2 justify-between w-full items-center">
         <Label text={label} tooltip={tooltip} />
         <button
-          className='flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500 active:scale-90'
+          className="flex items-center justify-center h-7 aspect-square bg-shark-600 rounded hover:brightness-125 transition border-t border-shark-500 active:scale-90"
           onClick={() => {
             addNewButton();
           }}
@@ -63,7 +76,7 @@ const ButtonInputGroup = (props) => {
         </button>
       </div>
 
-      <div className='flex flex-col gap-2 mt-2'>{buttonInputs}</div>
+      <div className="flex flex-col gap-2 mt-2">{buttonInputs}</div>
     </div>
   );
 };

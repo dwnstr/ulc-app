@@ -14,6 +14,7 @@ const SelectBox = (props) => {
     options,
     value,
     setValue,
+    disabledOptions,
   } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
@@ -27,11 +28,19 @@ const SelectBox = (props) => {
   };
 
   const optionFactory = options.map((option, index) => {
+    const isDisabled = disabledOptions
+      ? disabledOptions.includes(option.value)
+      : false;
     return (
       <Select.Item
         key={index}
-        className='w-full relative flex items-center px-8 py-2 rounded-md text-sm text-shark-300 font-medium dark:focus:bg-shark-700 select-none cursor-pointer'
+        className={`w-full relative flex items-center px-8 py-2 rounded-md text-sm text-shark-300 font-medium select-none cursor-pointer ${
+          isDisabled
+            ? "opacity-50 cursor-not-allowed"
+            : "dark:focus:bg-shark-700"
+        }`}
         value={option.value}
+        disabled={isDisabled}
       >
         <Select.ItemText>{option.name}</Select.ItemText>
       </Select.Item>
@@ -42,7 +51,7 @@ const SelectBox = (props) => {
     <div className="flex flex-col gap-2 items-start">
       <Label text={label} tooltip={tooltip} />
       <Select.Root value={value} onValueChange={handleChange}>
-        <Select.Trigger className='inline-flex items-center text-sm justify-center rounded-md px-[15px] leading-none h-[35px] gap-[5px] text-shark-300 bg-shark-800 border border-shark-600 outline-none'>
+        <Select.Trigger className="inline-flex items-center text-sm justify-center rounded-md px-[15px] leading-none h-[35px] gap-[5px] text-shark-300 bg-shark-800 border border-shark-600 outline-none">
           <Select.Value />
           <Select.Icon>
             <ChevronDown size={14} />
@@ -50,9 +59,9 @@ const SelectBox = (props) => {
         </Select.Trigger>
 
         <Select.Portal>
-          <Select.Content className='overflow-hidden'>
+          <Select.Content className="overflow-hidden">
             <Select.ScrollUpButton />
-            <Select.Viewport className='bg-shark-800 p-2 rounded-lg shadow-lg border border-shark-600'>
+            <Select.Viewport className="bg-shark-800 p-2 rounded-lg shadow-lg border border-shark-600">
               {optionFactory}
             </Select.Viewport>
             <Select.ScrollDownButton />

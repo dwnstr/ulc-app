@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const ConfigsContext = createContext();
 
@@ -24,6 +24,7 @@ const ConfigsProvider = ({ children }) => {
 
       useHorn: false,
       hornExtras: [],
+      hornDisableExtras: [],
 
       useBrakes: false,
       useRealBrakes: true,
@@ -33,6 +34,7 @@ const ConfigsProvider = ({ children }) => {
 
       useReverse: false,
       reverseExtras: [],
+      reverseDisableExtras: [],
 
       useDoors: false,
       dEnable: [],
@@ -55,6 +57,9 @@ const ConfigsProvider = ({ children }) => {
         //   repair: false,
         // },
       ],
+
+      useStages: false,
+      stageKeys: [],
 
       useDefaultStages: false,
       enableKeys: [],
@@ -94,6 +99,7 @@ const ConfigsProvider = ({ children }) => {
 
         useHorn: false,
         hornExtras: [],
+        hornDisableExtras: [],
 
         useBrakes: false,
         useRealBrakes: true,
@@ -103,6 +109,7 @@ const ConfigsProvider = ({ children }) => {
 
         useReverse: false,
         reverseExtras: [],
+        reverseDisableExtras: [],
 
         useDoors: false,
         dEnable: [],
@@ -125,6 +132,9 @@ const ConfigsProvider = ({ children }) => {
           //   repair: false,
           // },
         ],
+
+        useStages: false,
+        stageKeys: [],
 
         useDefaultStages: false,
         enableKeys: [],
