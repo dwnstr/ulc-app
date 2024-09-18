@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ConfigsContext } from "@/context/configs.context";
 import { Plus, Trash2 } from "lucide-react";
 import CollapsibleSection from "./CollapsibleSection";
@@ -11,8 +11,20 @@ import SelectBox from "./SelectBox";
 import ButtonInputGroup from "./ButtonInputGroup";
 
 const ConfigInputGroup = (props) => {
-  const { config } = props;
+  const { config, updateConfigValue } = props;
   const { removeConfig } = useContext(ConfigsContext);
+
+  // whenever config.buttons changes remove any stage keys not contained in buttons at button.key
+  useEffect(() => {
+    //console.log("useEffect", config.buttons);
+    const newStageKeys = config.stageKeys.filter((key) => {
+      return config.buttons.some((button) => button.key === key);
+    });
+    //console.log("newStageKeys", newStageKeys);
+    if (newStageKeys.length !== config.stageKeys.length) {
+      updateConfigValue(config.id, "stageKeys", newStageKeys);
+    }
+  }, [config.buttons]);
 
   return (
     <div className="flex flex-col gap-2 w-full p-2 bg-shark-800/70 rounded-lg">
@@ -90,7 +102,7 @@ const ConfigInputGroup = (props) => {
             tooltip={{
               text: "Specify buttons (by their key) that will behave as stages.",
             }}
-            choices={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+            choices={config.buttons.map((button) => button.key)}
             values={config.stageKeys}
           />
         </CollapsibleSection>
@@ -381,12 +393,18 @@ const ConfigInputGroup = (props) => {
 };
 
 const Input = () => {
-  const { configs, addConfig } = useContext(ConfigsContext);
+  const { configs, addConfig, updateConfigValue } = useContext(ConfigsContext);
   //console.log("Configs", configs);
   // map configs to input groups
   const inputGroups = configs.map((config, index) => {
     //console.log(key, config);
-    return <ConfigInputGroup key={index} config={config} />;
+    return (
+      <ConfigInputGroup
+        key={index}
+        config={config}
+        updateConfigValue={updateConfigValue}
+      />
+    );
   });
 
   return (
