@@ -22,6 +22,8 @@ const ConfigInputGroup = (props) => {
     });
     //console.log("newStageKeys", newStageKeys);
     if (newStageKeys.length !== config.stageKeys.length) {
+      // sort
+      newStageKeys.sort((a, b) => a - b);
       updateConfigValue(config.id, "stageKeys", newStageKeys);
     }
   }, [config.buttons]);
