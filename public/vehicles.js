@@ -153,12 +153,9 @@ const data = [
     image: "https://i.imgur.com/IcsBdyp.jpeg",
     url: "https://discord.gg/6xHyEE9",
     isPack: false,
-    features: [
-      "takedowns",
-      "scene lights",
-      "stage buttons",
-    ],
+    features: ["takedowns", "scene lights", "stage buttons"],
   },
+  {
     id: 13,
     title: "Legacy Pack Part l",
     description:
@@ -166,14 +163,13 @@ const data = [
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 10000,
-    image: "https://cdn.1080designs.com/uploads/461829883509735424/kTe7srOVmVHw.png",
+    image:
+      "https://cdn.1080designs.com/uploads/461829883509735424/kTe7srOVmVHw.png",
     url: "https://discord.gg/YwTvxWsaZx",
     isPack: true,
-    features: [
-      "takedowns",
-      "park pattern",
-    ],
+    features: ["takedowns", "park pattern"],
   },
+  {
     id: 14,
     title: "Plow Truck Package",
     description:
@@ -181,13 +177,13 @@ const data = [
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 10000,
-    image: "https://cdn.1080designs.com/uploads/461829883509735424/d9BVOanMMKyK.png",
+    image:
+      "https://cdn.1080designs.com/uploads/461829883509735424/d9BVOanMMKyK.png",
     url: "https://jadesignsfivem.com/products/2024-dot-utility-package?variant=45633646395612",
     isPack: true,
-    features: [
-      "park pattern",
-    ],
+    features: ["park pattern"],
   },
+  {
     id: 15,
     title: "Offroad LEO Jeep",
     description:
@@ -195,13 +191,13 @@ const data = [
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 1000,
-    image: "https://cdn.1080designs.com/uploads/461829883509735424/adLe2gcyNzcY.png",
+    image:
+      "https://cdn.1080designs.com/uploads/461829883509735424/adLe2gcyNzcY.png",
     url: "https://jadesignsfivem.com/products/generic-offroad-leo-vehicle",
     isPack: false,
-    features: [
-      "park pattern",
-    ],
+    features: ["park pattern"],
   },
+  {
     id: 16,
     title: "2018 Ambulance Duo",
     description:
@@ -209,12 +205,13 @@ const data = [
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 2200,
-    image: "https://cdn.1080designs.com/uploads/461829883509735424/V9gavEKnCVMK.png",
+    image:
+      "https://cdn.1080designs.com/uploads/461829883509735424/V9gavEKnCVMK.png",
     url: "https://jadesignsfivem.com/products/2018-generic-ambulance-duo",
     isPack: false,
-    features: [
-    ],
+    features: [],
   },
+  {
     id: 17,
     title: "DOT Utility Package",
     description:
@@ -222,12 +219,11 @@ const data = [
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 10000,
-    image: "https://cdn.1080designs.com/uploads/461829883509735424/m9OwpQ9tXD6Z.png",
+    image:
+      "https://cdn.1080designs.com/uploads/461829883509735424/m9OwpQ9tXD6Z.png",
     url: "https://jadesignsfivem.com/products/2024-dot-utility-package",
     isPack: true,
-    features: [
-      "park pattern",
-    ],
+    features: ["park pattern"],
   },
 ];
 
