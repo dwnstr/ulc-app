@@ -171,7 +171,7 @@ const data = [
   },
   {
     id: 14,
-    title: "Plow Truck Package",
+    title: "Plow Truck Pack",
     description:
       "SNOW CHAIN TIRE OPTIONS 3 Plow options 3 Cars with Salter 1 Car with sign board 20 Sirens one siren id for all cars",
     creatorName: "Puck",
@@ -213,7 +213,7 @@ const data = [
   },
   {
     id: 17,
-    title: "DOT Utility Package",
+    title: "DOT Utility Pack",
     description:
       "Optional sign board, Badged & Debadged Options 20 Sirens one siren id for all cars",
     creatorName: "Puck",
