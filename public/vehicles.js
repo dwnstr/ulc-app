@@ -164,7 +164,7 @@ const data = [
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 10000,
     image:
-      "https://cdn.1080designs.com/uploads/461829883509735424/kTe7srOVmVHw.png",
+      "https://cdn.shopify.com/s/files/1/0914/5686/4550/files/Screenshot_2024-12-08_013353_fef0d39a-c249-4c46-ac54-fb97799faebd.png?v=1733639832",
     url: "https://discord.gg/YwTvxWsaZx",
     isPack: true,
     features: ["takedowns", "park pattern"],
@@ -176,9 +176,9 @@ const data = [
       "SNOW CHAIN TIRE OPTIONS 3 Plow options 3 Cars with Salter 1 Car with sign board 20 Sirens one siren id for all cars",
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 10000,
+    price: 4200,
     image:
-      "https://cdn.1080designs.com/uploads/461829883509735424/d9BVOanMMKyK.png",
+      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageDOT1.png?v=1733684039",
     url: "https://jadesignsfivem.com/products/2024-dot-utility-package?variant=45633646395612",
     isPack: true,
     features: ["park pattern"],
@@ -192,7 +192,7 @@ const data = [
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 1000,
     image:
-      "https://cdn.1080designs.com/uploads/461829883509735424/adLe2gcyNzcY.png",
+      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageLEO5.png?v=1734818109",
     url: "https://jadesignsfivem.com/products/generic-offroad-leo-vehicle",
     isPack: false,
     features: ["park pattern"],
@@ -206,7 +206,7 @@ const data = [
     creatorLink: "https://discord.gg/YwTvxWsaZx",
     price: 2200,
     image:
-      "https://cdn.1080designs.com/uploads/461829883509735424/V9gavEKnCVMK.png",
+      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/Screenshot_2024-11-11_191104.png?v=1731370393",
     url: "https://jadesignsfivem.com/products/2018-generic-ambulance-duo",
     isPack: false,
     features: [],
@@ -218,9 +218,9 @@ const data = [
       "Optional sign board, Badged & Debadged Options 20 Sirens one siren id for all cars",
     creatorName: "Puck",
     creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 10000,
+    price: 6500,
     image:
-      "https://cdn.1080designs.com/uploads/461829883509735424/m9OwpQ9tXD6Z.png",
+      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/puckdot.png?v=1727635063",
     url: "https://jadesignsfivem.com/products/2024-dot-utility-package",
     isPack: true,
     features: ["park pattern"],
