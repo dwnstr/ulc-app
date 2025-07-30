@@ -155,76 +155,76 @@ const data = [
     isPack: false,
     features: ["takedowns", "scene lights", "stage buttons"],
   },
-  {
-    id: 13,
-    title: "Legacy Pack Part l",
-    description:
-      "8 Cars, 30+ modkits per car, Badge and de-badged options, 20 Sirens one siren id for all cars",
-    creatorName: "Puck",
-    creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 10000,
-    image:
-      "https://cdn.shopify.com/s/files/1/0914/5686/4550/files/Screenshot_2024-12-08_013353_fef0d39a-c249-4c46-ac54-fb97799faebd.png?v=1733639832",
-    url: "https://discord.gg/YwTvxWsaZx",
-    isPack: true,
-    features: ["takedowns", "park pattern"],
-  },
-  {
-    id: 14,
-    title: "Plow Truck Pack",
-    description:
-      "SNOW CHAIN TIRE OPTIONS 3 Plow options 3 Cars with Salter 1 Car with sign board 20 Sirens one siren id for all cars",
-    creatorName: "Puck",
-    creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 4200,
-    image:
-      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageDOT1.png?v=1733684039",
-    url: "https://jadesignsfivem.com/products/2024-dot-utility-package?variant=45633646395612",
-    isPack: true,
-    features: ["park pattern"],
-  },
-  {
-    id: 15,
-    title: "Offroad LEO Jeep",
-    description:
-      "Wheel Chains Optional, Detachable Roof & Equipment, Spare Tire Option on the rear, HQ Dirt Map",
-    creatorName: "Puck",
-    creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 1000,
-    image:
-      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageLEO5.png?v=1734818109",
-    url: "https://jadesignsfivem.com/products/generic-offroad-leo-vehicle",
-    isPack: false,
-    features: ["park pattern"],
-  },
-  {
-    id: 16,
-    title: "2018 Ambulance Duo",
-    description:
-      "Wheel Chains Optional, Detachable Roof & Equipment, Spare Tire Option on the rear, HQ Dirt Map",
-    creatorName: "Puck",
-    creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 2200,
-    image:
-      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/Screenshot_2024-11-11_191104.png?v=1731370393",
-    url: "https://jadesignsfivem.com/products/2018-generic-ambulance-duo",
-    isPack: false,
-    features: [],
-  },
-  {
-    id: 17,
-    title: "DOT Utility Pack",
-    description:
-      "Optional sign board, Badged & Debadged Options 20 Sirens one siren id for all cars",
-    creatorName: "Puck",
-    creatorLink: "https://discord.gg/YwTvxWsaZx",
-    price: 6500,
-    image:
-      "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/puckdot.png?v=1727635063",
-    url: "https://jadesignsfivem.com/products/2024-dot-utility-package",
-    isPack: true,
-    features: ["park pattern"],
-  },
+  // {
+  //   id: 13,
+  //   title: "Legacy Pack Part l",
+  //   description:
+  //     "8 Cars, 30+ modkits per car, Badge and de-badged options, 20 Sirens one siren id for all cars",
+  //   creatorName: "Puck",
+  //   creatorLink: "https://discord.gg/YwTvxWsaZx",
+  //   price: 10000,
+  //   image:
+  //     "https://cdn.shopify.com/s/files/1/0914/5686/4550/files/Screenshot_2024-12-08_013353_fef0d39a-c249-4c46-ac54-fb97799faebd.png?v=1733639832",
+  //   url: "https://discord.gg/YwTvxWsaZx",
+  //   isPack: true,
+  //   features: ["takedowns", "park pattern"],
+  // },
+  // {
+  //   id: 14,
+  //   title: "Plow Truck Pack",
+  //   description:
+  //     "SNOW CHAIN TIRE OPTIONS 3 Plow options 3 Cars with Salter 1 Car with sign board 20 Sirens one siren id for all cars",
+  //   creatorName: "Puck",
+  //   creatorLink: "https://discord.gg/YwTvxWsaZx",
+  //   price: 4200,
+  //   image:
+  //     "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageDOT1.png?v=1733684039",
+  //   url: "https://jadesignsfivem.com/products/2024-dot-utility-package?variant=45633646395612",
+  //   isPack: true,
+  //   features: ["park pattern"],
+  // },
+  // {
+  //   id: 15,
+  //   title: "Offroad LEO Jeep",
+  //   description:
+  //     "Wheel Chains Optional, Detachable Roof & Equipment, Spare Tire Option on the rear, HQ Dirt Map",
+  //   creatorName: "Puck",
+  //   creatorLink: "https://discord.gg/YwTvxWsaZx",
+  //   price: 1000,
+  //   image:
+  //     "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/imageLEO5.png?v=1734818109",
+  //   url: "https://jadesignsfivem.com/products/generic-offroad-leo-vehicle",
+  //   isPack: false,
+  //   features: ["park pattern"],
+  // },
+  // {
+  //   id: 16,
+  //   title: "2018 Ambulance Duo",
+  //   description:
+  //     "Wheel Chains Optional, Detachable Roof & Equipment, Spare Tire Option on the rear, HQ Dirt Map",
+  //   creatorName: "Puck",
+  //   creatorLink: "https://discord.gg/YwTvxWsaZx",
+  //   price: 2200,
+  //   image:
+  //     "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/Screenshot_2024-11-11_191104.png?v=1731370393",
+  //   url: "https://jadesignsfivem.com/products/2018-generic-ambulance-duo",
+  //   isPack: false,
+  //   features: [],
+  // },
+  // {
+  //   id: 17,
+  //   title: "DOT Utility Pack",
+  //   description:
+  //     "Optional sign board, Badged & Debadged Options 20 Sirens one siren id for all cars",
+  //   creatorName: "Puck",
+  //   creatorLink: "https://discord.gg/YwTvxWsaZx",
+  //   price: 6500,
+  //   image:
+  //     "https://cdn.shopify.com/s/files/1/0619/1765/9356/files/puckdot.png?v=1727635063",
+  //   url: "https://jadesignsfivem.com/products/2024-dot-utility-package",
+  //   isPack: true,
+  //   features: ["park pattern"],
+  // },
   {
     id: 18,
     title: "2018 Dodge Charger Unmarked",
