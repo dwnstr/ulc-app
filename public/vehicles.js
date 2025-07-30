@@ -232,7 +232,7 @@ const data = [
       "An Unmarked 2018 Dodge Charger with a Whelen setup. (FST & RST). Heavily detailed interior, and well optimized.",
     creatorName: "Sova Modifications / Phoenix Development",
     creatorLink: "https://discord.com/invite/swBn5B5FSQ",
-    price: 15000,
+    price: 1500,
     image:
       "https://cdn.discordapp.com/attachments/1201395540760469557/1386856130285797467/2018_Dodge_Charger_Unmarked_Final_4.png?ex=688b58ac&is=688a072c&hm=6c9d6ef6a4d9626d401a85e23758828f6aa5294b203d35eba6165d31e95e63a9&",
     url: "https://www.patreon.com/SovaModifications/shop/2018-dodge-charger-unmarked-ulc-2025-1830450?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=productshare_creator&utm_content=join_link",
