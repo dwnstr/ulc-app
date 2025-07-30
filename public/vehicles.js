@@ -229,7 +229,7 @@ const data = [
     id: 18,
     title: "2018 Dodge Charger Unmarked",
     description:
-      "An Unmarked 2018 Dodge Charger with a Whelen setup. (FST & RST). Heavily detailed interior, and well optimized.",
+      "Unmarked 2018 Dodge Charger with a Whelen setup. (FST & RST). Heavily detailed interior, and well optimized.",
     creatorName: "Sova Modifications / Phoenix Development",
     creatorLink: "https://discord.com/invite/swBn5B5FSQ",
     price: 1500,
