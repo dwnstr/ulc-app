@@ -20,6 +20,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/vehicles",
+        destination: "https://fiveboard.io/ulc",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
