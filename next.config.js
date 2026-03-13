@@ -25,7 +25,7 @@ const nextConfig = {
       {
         source: "/vehicles",
         destination: "https://fiveboard.io/ulc",
-        permanent: false,
+        permanent: true,
       },
     ];
   },
