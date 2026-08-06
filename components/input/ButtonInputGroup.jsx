@@ -5,10 +5,34 @@ import ButtonInput from "./ButtonInput";
 import Label from "./Label";
 
 const ButtonInputGroup = (props) => {
-  const { configId, label, tooltip, field, values } = props;
+  const { configId, config, label, tooltip, field, values } = props;
   const { updateConfigValue } = useContext(ConfigsContext);
 
   const [newButtons, setNewButtons] = useState(values);
+
+  const managedExtras = [
+    ...newButtons.flatMap((button) => [
+      button.extra,
+      ...(button.linkedExtras || []),
+      ...(button.oppositeExtras || []),
+      ...(button.offExtras || []),
+    ]),
+    ...(config.cruiseExtras || []),
+    ...(config.parkExtras || []),
+    ...(config.driveExtras || []),
+    ...(config.hornExtras || []),
+    ...(config.hornDisableExtras || []),
+    ...(config.brakeExtras || []),
+    ...(config.brakeDisableExtras || []),
+    ...(config.reverseExtras || []),
+    ...(config.reverseDisableExtras || []),
+    ...(config.dEnable || []),
+    ...(config.dDisable || []),
+    ...(config.pEnable || []),
+    ...(config.pDisable || []),
+    ...(config.tEnable || []),
+    ...(config.tDisable || []),
+  ];
 
   useEffect(() => {
     updateConfigValue(configId, field, newButtons);
@@ -35,6 +59,7 @@ const ButtonInputGroup = (props) => {
         key: newKey,
         color: "green",
         extra: newKey,
+        requiredExtras: [],
         linkedExtras: [],
         oppositeExtras: [],
         offExtras: [],
@@ -56,6 +81,7 @@ const ButtonInputGroup = (props) => {
         index={index}
         button={button}
         buttons={newButtons}
+        managedExtras={managedExtras}
         setNewButtons={setNewButtons}
         removeButton={removeButton}
       />

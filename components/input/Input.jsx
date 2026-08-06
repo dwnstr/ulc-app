@@ -13,6 +13,10 @@ import ButtonInputGroup from "./ButtonInputGroup";
 const ConfigInputGroup = (props) => {
   const { config, updateConfigValue } = props;
   const { removeConfig } = useContext(ConfigsContext);
+  const toNonNegativeInteger = (value) => {
+    const number = Number(value);
+    return Number.isFinite(number) ? Math.max(0, Math.trunc(number)) : 0;
+  };
 
   // whenever config.buttons changes remove any stage keys not contained in buttons at button.key
   useEffect(() => {
@@ -77,6 +81,7 @@ const ConfigInputGroup = (props) => {
         <CollapsibleSection open={config.useButtons}>
           <ButtonInputGroup
             configId={config.id}
+            config={config}
             label="Buttons"
             field={"buttons"}
             values={config.buttons}
@@ -272,6 +277,53 @@ const ConfigInputGroup = (props) => {
             label={"Disable Extras"}
             values={config.hornDisableExtras}
           />
+          <ToggleCheckbox
+            configId={config.id}
+            label={"Override Global Horn Timing"}
+            tooltip={{
+              text: "Set vehicle-specific horn timing. Leave this disabled to use Config.HornSettings. Delays are measured in milliseconds.",
+            }}
+            field={"overrideHornTiming"}
+            value={config.overrideHornTiming}
+          />
+          <CollapsibleSection open={config.overrideHornTiming}>
+            <div className="grid gap-2 md:grid-cols-2">
+              <label className="flex flex-col gap-1 text-sm">
+                Horn Press Delay (ms)
+                <input
+                  className="rounded-md border border-shark-500 bg-shark-800 px-2 py-1"
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={config.hornPressDelay}
+                  onChange={(event) =>
+                    updateConfigValue(
+                      config.id,
+                      "hornPressDelay",
+                      toNonNegativeInteger(event.target.value)
+                    )
+                  }
+                />
+              </label>
+              <label className="flex flex-col gap-1 text-sm">
+                Horn Release Delay (ms)
+                <input
+                  className="rounded-md border border-shark-500 bg-shark-800 px-2 py-1"
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={config.hornReleaseDelay}
+                  onChange={(event) =>
+                    updateConfigValue(
+                      config.id,
+                      "hornReleaseDelay",
+                      toNonNegativeInteger(event.target.value)
+                    )
+                  }
+                />
+              </label>
+            </div>
+          </CollapsibleSection>
         </CollapsibleSection>
       </div>
 

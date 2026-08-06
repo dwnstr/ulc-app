@@ -31,7 +31,13 @@ const CodeWindow = () => {
   hornConfig = {
     useHorn = ${config.useHorn},
     hornExtras = {${config.hornExtras}},
-    disableExtras = {${config.hornDisableExtras}}
+    disableExtras = {${config.hornDisableExtras}},
+    hornPressDelay = ${
+      config.overrideHornTiming ? config.hornPressDelay : "nil"
+    },
+    hornReleaseDelay = ${
+      config.overrideHornTiming ? config.hornReleaseDelay : "nil"
+    }
   },
   brakeConfig = {
     useBrakes = ${config.useBrakes},
@@ -56,7 +62,7 @@ const CodeWindow = () => {
         button.key
       }, color = "${button.color}", extra = ${
         button.extra
-      }, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
+      }, requiredExtras = {${(button.requiredExtras || []).toString()}}, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
         button.repair
       }}`;
     })}

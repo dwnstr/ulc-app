@@ -6,7 +6,7 @@ import SelectBox from "./SelectBox";
 import Label from "./Label";
 
 const ButtonInput = (props) => {
-  const { index, button, buttons, setNewButtons, removeButton } = props;
+  const { index, button, buttons, managedExtras, setNewButtons, removeButton } = props;
   const [usedExtras, setUsedExtras] = useState([]);
 
   // whenever button.linkedExtras, button.oppositeExtras, or button.offExtras changes, update usedExtras
@@ -88,6 +88,21 @@ const ButtonInput = (props) => {
           setValue={(value) => {
             const newButtons = [...buttons];
             newButtons[index].extra = value;
+            setNewButtons(newButtons);
+          }}
+        />
+
+        <NumberSelectGroup
+          controlled
+          label="Required Extras"
+          tooltip={{
+            text: "The button is only shown while all selected extras are enabled. Extras controlled elsewhere in this configuration cannot be selected.",
+          }}
+          values={button.requiredExtras || []}
+          disabledOptions={managedExtras}
+          setValues={(values) => {
+            const newButtons = [...buttons];
+            newButtons[index].requiredExtras = values;
             setNewButtons(newButtons);
           }}
         />
