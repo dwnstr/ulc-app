@@ -31,7 +31,13 @@ const CodeWindow = () => {
   hornConfig = {
     useHorn = ${config.useHorn},
     hornExtras = {${config.hornExtras}},
-    disableExtras = {${config.hornDisableExtras}}
+    disableExtras = {${config.hornDisableExtras}},
+    hornPressDelay = ${
+      config.overrideHornTiming ? config.hornPressDelay : "nil"
+    },
+    hornReleaseDelay = ${
+      config.overrideHornTiming ? config.hornReleaseDelay : "nil"
+    }
   },
   brakeConfig = {
     useBrakes = ${config.useBrakes},

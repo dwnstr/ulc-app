@@ -25,6 +25,9 @@ const ConfigsProvider = ({ children }) => {
       useHorn: false,
       hornExtras: [],
       hornDisableExtras: [],
+      overrideHornTiming: false,
+      hornPressDelay: 0,
+      hornReleaseDelay: 0,
 
       useBrakes: false,
       useRealBrakes: true,
@@ -100,6 +103,9 @@ const ConfigsProvider = ({ children }) => {
         useHorn: false,
         hornExtras: [],
         hornDisableExtras: [],
+        overrideHornTiming: false,
+        hornPressDelay: 0,
+        hornReleaseDelay: 0,
 
         useBrakes: false,
         useRealBrakes: true,
