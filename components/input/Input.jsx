@@ -81,6 +81,7 @@ const ConfigInputGroup = (props) => {
         <CollapsibleSection open={config.useButtons}>
           <ButtonInputGroup
             configId={config.id}
+            config={config}
             label="Buttons"
             field={"buttons"}
             values={config.buttons}

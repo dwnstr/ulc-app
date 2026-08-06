@@ -62,7 +62,7 @@ const CodeWindow = () => {
         button.key
       }, color = "${button.color}", extra = ${
         button.extra
-      }, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
+      }, requiredExtras = {${(button.requiredExtras || []).toString()}}, linkedExtras = {${button.linkedExtras.toString()}}, oppositeExtras = {${button.oppositeExtras.toString()}}, offExtras = {${button.offExtras.toString()}}, repair = ${
         button.repair
       }}`;
     })}
